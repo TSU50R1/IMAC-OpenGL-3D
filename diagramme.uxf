@@ -1,0 +1,68 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>195</x><y>10</y><w>210</w><h>70</h></coordinates><panel_attributes>Class : Camera
+--
+Event *event
+
+move()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>195</x><y>500</y><w>210</w><h>200</h></coordinates><panel_attributes>Class : Item
+--
+key
+bag 
+book
+
+Model *model
+Int id
+Event *event
+
+display()
+take()
+use()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>195</x><y>90</y><w>210</w><h>190</h></coordinates><panel_attributes>Class : Scene
+--
+first
+second
+third
+
+Texture *texture
+Int id
+Light *light
+Landscape *landcape
+
+display()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>455</x><y>490</y><w>210</w><h>80</h></coordinates><panel_attributes>Class : Texture
+--
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>195</x><y>290</y><w>210</w><h>190</h></coordinates><panel_attributes>Class : Landscape
+--
+house
+castle
+bushes
+portal
+
+Model *model
+Int id
+
+display()
+enter()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>455</x><y>20</y><w>210</w><h>120</h></coordinates><panel_attributes>Class : Event
+--
+click
+key 
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>455</x><y>280</y><w>210</w><h>80</h></coordinates><panel_attributes>Class : Mesh
+--
+assimp
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>455</x><y>160</y><w>210</w><h>100</h></coordinates><panel_attributes>Class : Light
+--
+
+display()
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>455</x><y>390</y><w>210</w><h>80</h></coordinates><panel_attributes>Class : Model
+--
+assimp
+Mesh *mesh
+
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
