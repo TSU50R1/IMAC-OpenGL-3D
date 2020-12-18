@@ -1,6 +1,6 @@
 # IMAC-OpenGL-3D
 
-CITIMAC
+IMACITY
 ===
 Projet d'OpenGL IMAC 2 par Laurine Capdeville, Léa Rostoker et Daphné Chamot-Rooke
 
