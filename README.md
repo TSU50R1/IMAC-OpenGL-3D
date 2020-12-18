@@ -23,7 +23,8 @@ Pour ajouter des fichiers :
 Pour changer de branche :
 
 créer une branche ````git branch Branche````
-changer de brnche ````git checkout Branche````
+
+changer de branche ````git checkout Branche````
 
 ASSIMP
 =========
