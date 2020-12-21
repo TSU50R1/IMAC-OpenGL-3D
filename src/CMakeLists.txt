@@ -10,4 +10,4 @@ foreach(SRC_FILE ${SRC_FILES})
     target_link_libraries(${OUTPUT} ${ALL_LIBRARIES})
 endforeach()
 
-file(COPY shaders DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+#file(COPY shaders DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
