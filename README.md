@@ -47,10 +47,10 @@ LIBCONFINI
 Pour le parsing de .ini  
 Récupérer le zip ici : https://github.com/madmurphy/libconfini  
 Installer libtool pour pouvoir compiler : `sudo apt-get install libtool-bin`  
-faire : `./configure   `
-si ça ne marche pas : `./bootstrap` puis `./configure `
-puis : `make`
-et enfin : `make install-strip` et si ça ne marche pas  `sudo make install-strip`
+faire : `./configure   `  
+si ça ne marche pas : `./bootstrap` puis `./configure `  
+puis : `make`  
+et enfin : `make install-strip` et si ça ne marche pas  `sudo make install-strip`   
 `  
 
 
