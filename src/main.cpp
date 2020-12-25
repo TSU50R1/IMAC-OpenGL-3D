@@ -30,6 +30,8 @@ bool firstMouse = true;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
+
+
 int main(){
     // glfw: initialize and configure
     // ------------------------------
@@ -74,12 +76,12 @@ int main(){
 
     // build and compile shaders
     // -------------------------
-   Shader ourShader("/mnt/e/Bibliothèques/Documents/IMAC/INFO/Imacity/IMAC-OpenGL-3D/src/shaders/modelLoading.vs.glsl", "/mnt/e/Bibliothèques/Documents/IMAC/INFO/Imacity/IMAC-OpenGL-3D/src/shaders/modelLoading.fs.glsl");
+    Shader ourShader("/mnt/e/Bibliothèques/Documents/IMAC/INFO/Imacity/IMAC-OpenGL-3D/src/shaders/3D.vs.glsl",
+         "/mnt/e/Bibliothèques/Documents/IMAC/INFO/Imacity/IMAC-OpenGL-3D/src/shaders/lightning.fs.glsl");
 
     // load models
     // -----------
-    /*Model ourModel("/mnt/e/Bibliothèques/Documents/IMAC/INFO/Imacity/IMAC-OpenGL-3D/assets/models/backpack.obj");*/
-
+    //Model ourModel("/mnt/e/Bibliothèques/Documents/IMAC/INFO/Imacity/IMAC-OpenGL-3D/assets/models/backpack.obj");
 
     // draw in wireframe
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -105,18 +107,37 @@ int main(){
         // don't forget to enable shader before setting uniforms
         ourShader.use();
 
+        //uniforms
+        GLint uMVPMatrix = glGetUniformLocation(ourShader.ID, "uMVPMatrix");
+        GLint uMVMatrix = glGetUniformLocation(ourShader.ID, "uMVMatrix");
+        GLint uNormalMatrix = glGetUniformLocation(ourShader.ID, "uNormalMatrix");
+        GLint uLightIntensity = glGetUniformLocation(ourShader.ID, "uLightIntensity");
+        GLint uLightDir_vs = glGetUniformLocation(ourShader.ID, "uLightDir_vs");
+        GLint uKd = glGetUniformLocation(ourShader.ID, "uKd");
+        GLint uKs = glGetUniformLocation(ourShader.ID, "uKs");
+        GLint uShininess = glGetUniformLocation(ourShader.ID, "uShininess");
+
         // view/projection transformations
         glm::mat4 projection = glm::perspective(glm::radians(70.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
         glm::mat4 view = camera.getViewMatrix();
         ourShader.setMat4("projection", projection);
         ourShader.setMat4("view", view);
 
+        glm::mat4 lightMVMatrix = glm::rotate(projection, 4.75f, glm::vec3(-1, -1.5, 0)); // Translation * Rotation
+        glm::vec3 lightDir_vs(lightMVMatrix * glm::vec4(1, 1, 1, 0));
+        glUniform3f(uLightIntensity, 1, .5f, .5f);
+        glUniform3fv(uLightDir_vs, 1, glm::value_ptr(lightDir_vs));
+        glUniform3f(uKd, 0.05, 0, 1);
+        glUniform3f(uKs, 0.15, 0.15, 1);
+        glUniform1f(uShininess, 2);
+
+
         // render the loaded model
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(0.0f, 0.0f, -40.0f)); // translate it down so it's at the center of the scene
         model = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.1f));	// it's a bit too big for our scene, so scale it down
         ourShader.setMat4("model", model);
-       // ourModel.Draw(ourShader);
+        //ourModel.Draw(ourShader);
 
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
