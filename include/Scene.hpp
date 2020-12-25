@@ -1,4 +1,4 @@
-#include <glimac/Sphere.hpp>
+//#include <glimac/Sphere.hpp>
 
 // Freelfy camera test with a sphere
 class Scene {
