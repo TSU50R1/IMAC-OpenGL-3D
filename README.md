@@ -7,27 +7,49 @@ Projet d'OpenGL IMAC 2 par Laurine Capdeville, Léa Rostoker et Daphné Chamot-R
 TUTO
 =====
 
+**PREREQUIS**
+
+- cmake
+- SDL, SDL2
+- ASSIMP
+- GLFW
+
+**GIT**
+
 Pour clôner le projet : se déplacer dans le dossier de son choix dans une invite de commande puis taper 
 
-````git clone https://github.com/TSU50R1/IMAC-OpenGL-3D.git```` 
-
+`git clone https://github.com/TSU50R1/IMAC-OpenGL-3D.git`
 
 Pour ajouter des fichiers :
 
-````git add ./dossier/fichier````
+`git add ./dossier/fichier`
 
-````git commit -m "commentaire" ````
+`git commit -m "commentaire" `
 
-````git push````
+`git push`
+
 
 Pour changer de branche :
 
-créer une branche ````git branch Branche````
+créer une branche `git branch Branche`
 
-changer de branche ````git checkout Branche````
+changer de branche `git checkout Branche`
 
-ASSIMP
-=========
+
+**COMPILATION**
+
+`IMAC-OpenGL-3D/cmake-build-debug$ cmake ..`
+
+`IMAC-OpenGL-3D/cmake-build-debug$ make`
+
+`IMAC-OpenGL-3D/cmake-build-debug$ cd ./bin`
+
+`IMAC-OpenGL-3D/cmake-build-debug/bin$ ./Imacity`
+
+
+
+**ASSIMP**
+
 Pour pouvoir utiliser la bibliothèque assimp:  
 
 telecharger assimp (version 5.0.1 pour ce projet)  
@@ -42,8 +64,8 @@ Dans `~/assimp/assimp-5.0.1` faire
 `make DESTDIR=~/assimp install` (met directement au bon endroit normalement)  
 
 
-LIBCONFINI
-===========
+**LIBCONFINI**
+
 Pour le parsing de .ini  
 Récupérer le zip ici : https://github.com/madmurphy/libconfini  
 Installer libtool pour pouvoir compiler : `sudo apt-get install libtool-bin`  
