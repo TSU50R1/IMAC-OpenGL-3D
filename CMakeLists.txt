@@ -35,11 +35,12 @@ include_directories(
 )
 
 #add_subdirectory(lib/glimac)
-set(ALL_LIBRARIES soil2  ${SDL_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} assimp glfw dl)
+set(ALL_LIBRARIES soil2  ${SDL_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} assimp glfw dl confini)
 link_directories(lib/SOIL2 /usr/local/lib ~/assimp/lib /usr/lib/x86_64-linux-gnu )
 add_executable(${PROJECT_NAME} ${SRC_FILES} ${HEADER_FILES} ${SHADER_FILES})
 target_link_libraries(${PROJECT_NAME} ${ALL_LIBRARIES} )
 
 file(COPY src/shaders DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
 file(COPY assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
+file(COPY ini_files DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
 
