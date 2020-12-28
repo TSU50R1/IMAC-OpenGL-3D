@@ -63,10 +63,10 @@ RM = /snap/clion/137/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/laurine/Documents/IMAC2/OpenGL/Opengl_Projet_Capdeville_ChamotRooke_Rostoker
+CMAKE_SOURCE_DIR = /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/laurine/Documents/IMAC2/OpenGL/Opengl_Projet_Capdeville_ChamotRooke_Rostoker/cmake-build-debug
+CMAKE_BINARY_DIR = /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Imacity.dir/depend.make
@@ -77,36 +77,140 @@ include CMakeFiles/Imacity.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Imacity.dir/flags.make
 
+CMakeFiles/Imacity.dir/src/Camera.cpp.o: CMakeFiles/Imacity.dir/flags.make
+CMakeFiles/Imacity.dir/src/Camera.cpp.o: ../src/Camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Imacity.dir/src/Camera.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Imacity.dir/src/Camera.cpp.o -c /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/Camera.cpp
+
+CMakeFiles/Imacity.dir/src/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Imacity.dir/src/Camera.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/Camera.cpp > CMakeFiles/Imacity.dir/src/Camera.cpp.i
+
+CMakeFiles/Imacity.dir/src/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Imacity.dir/src/Camera.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/Camera.cpp -o CMakeFiles/Imacity.dir/src/Camera.cpp.s
+
+CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.o: CMakeFiles/Imacity.dir/flags.make
+CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.o: ../src/FreeflyCamera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.o -c /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/FreeflyCamera.cpp
+
+CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/FreeflyCamera.cpp > CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.i
+
+CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/FreeflyCamera.cpp -o CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.s
+
+CMakeFiles/Imacity.dir/src/Mesh.cpp.o: CMakeFiles/Imacity.dir/flags.make
+CMakeFiles/Imacity.dir/src/Mesh.cpp.o: ../src/Mesh.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Imacity.dir/src/Mesh.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Imacity.dir/src/Mesh.cpp.o -c /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/Mesh.cpp
+
+CMakeFiles/Imacity.dir/src/Mesh.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Imacity.dir/src/Mesh.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/Mesh.cpp > CMakeFiles/Imacity.dir/src/Mesh.cpp.i
+
+CMakeFiles/Imacity.dir/src/Mesh.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Imacity.dir/src/Mesh.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/Mesh.cpp -o CMakeFiles/Imacity.dir/src/Mesh.cpp.s
+
+CMakeFiles/Imacity.dir/src/Model.cpp.o: CMakeFiles/Imacity.dir/flags.make
+CMakeFiles/Imacity.dir/src/Model.cpp.o: ../src/Model.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Imacity.dir/src/Model.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Imacity.dir/src/Model.cpp.o -c /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/Model.cpp
+
+CMakeFiles/Imacity.dir/src/Model.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Imacity.dir/src/Model.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/Model.cpp > CMakeFiles/Imacity.dir/src/Model.cpp.i
+
+CMakeFiles/Imacity.dir/src/Model.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Imacity.dir/src/Model.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/Model.cpp -o CMakeFiles/Imacity.dir/src/Model.cpp.s
+
+CMakeFiles/Imacity.dir/src/Scene.cpp.o: CMakeFiles/Imacity.dir/flags.make
+CMakeFiles/Imacity.dir/src/Scene.cpp.o: ../src/Scene.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Imacity.dir/src/Scene.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Imacity.dir/src/Scene.cpp.o -c /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/Scene.cpp
+
+CMakeFiles/Imacity.dir/src/Scene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Imacity.dir/src/Scene.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/Scene.cpp > CMakeFiles/Imacity.dir/src/Scene.cpp.i
+
+CMakeFiles/Imacity.dir/src/Scene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Imacity.dir/src/Scene.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/Scene.cpp -o CMakeFiles/Imacity.dir/src/Scene.cpp.s
+
+CMakeFiles/Imacity.dir/src/glad.c.o: CMakeFiles/Imacity.dir/flags.make
+CMakeFiles/Imacity.dir/src/glad.c.o: ../src/glad.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Imacity.dir/src/glad.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Imacity.dir/src/glad.c.o   -c /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/glad.c
+
+CMakeFiles/Imacity.dir/src/glad.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Imacity.dir/src/glad.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/glad.c > CMakeFiles/Imacity.dir/src/glad.c.i
+
+CMakeFiles/Imacity.dir/src/glad.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Imacity.dir/src/glad.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/glad.c -o CMakeFiles/Imacity.dir/src/glad.c.s
+
 CMakeFiles/Imacity.dir/src/main.cpp.o: CMakeFiles/Imacity.dir/flags.make
 CMakeFiles/Imacity.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laurine/Documents/IMAC2/OpenGL/Opengl_Projet_Capdeville_ChamotRooke_Rostoker/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Imacity.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Imacity.dir/src/main.cpp.o -c /home/laurine/Documents/IMAC2/OpenGL/Opengl_Projet_Capdeville_ChamotRooke_Rostoker/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Imacity.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Imacity.dir/src/main.cpp.o -c /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/main.cpp
 
 CMakeFiles/Imacity.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Imacity.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laurine/Documents/IMAC2/OpenGL/Opengl_Projet_Capdeville_ChamotRooke_Rostoker/src/main.cpp > CMakeFiles/Imacity.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/main.cpp > CMakeFiles/Imacity.dir/src/main.cpp.i
 
 CMakeFiles/Imacity.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Imacity.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laurine/Documents/IMAC2/OpenGL/Opengl_Projet_Capdeville_ChamotRooke_Rostoker/src/main.cpp -o CMakeFiles/Imacity.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/main.cpp -o CMakeFiles/Imacity.dir/src/main.cpp.s
+
+CMakeFiles/Imacity.dir/src/myShader.cpp.o: CMakeFiles/Imacity.dir/flags.make
+CMakeFiles/Imacity.dir/src/myShader.cpp.o: ../src/myShader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Imacity.dir/src/myShader.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Imacity.dir/src/myShader.cpp.o -c /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/myShader.cpp
+
+CMakeFiles/Imacity.dir/src/myShader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Imacity.dir/src/myShader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/myShader.cpp > CMakeFiles/Imacity.dir/src/myShader.cpp.i
+
+CMakeFiles/Imacity.dir/src/myShader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Imacity.dir/src/myShader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/src/myShader.cpp -o CMakeFiles/Imacity.dir/src/myShader.cpp.s
 
 # Object files for target Imacity
 Imacity_OBJECTS = \
-"CMakeFiles/Imacity.dir/src/main.cpp.o"
+"CMakeFiles/Imacity.dir/src/Camera.cpp.o" \
+"CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.o" \
+"CMakeFiles/Imacity.dir/src/Mesh.cpp.o" \
+"CMakeFiles/Imacity.dir/src/Model.cpp.o" \
+"CMakeFiles/Imacity.dir/src/Scene.cpp.o" \
+"CMakeFiles/Imacity.dir/src/glad.c.o" \
+"CMakeFiles/Imacity.dir/src/main.cpp.o" \
+"CMakeFiles/Imacity.dir/src/myShader.cpp.o"
 
 # External object files for target Imacity
 Imacity_EXTERNAL_OBJECTS =
 
+bin/Imacity: CMakeFiles/Imacity.dir/src/Camera.cpp.o
+bin/Imacity: CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.o
+bin/Imacity: CMakeFiles/Imacity.dir/src/Mesh.cpp.o
+bin/Imacity: CMakeFiles/Imacity.dir/src/Model.cpp.o
+bin/Imacity: CMakeFiles/Imacity.dir/src/Scene.cpp.o
+bin/Imacity: CMakeFiles/Imacity.dir/src/glad.c.o
 bin/Imacity: CMakeFiles/Imacity.dir/src/main.cpp.o
+bin/Imacity: CMakeFiles/Imacity.dir/src/myShader.cpp.o
 bin/Imacity: CMakeFiles/Imacity.dir/build.make
-bin/Imacity: lib/glimac/libglimac.a
 bin/Imacity: /usr/lib/x86_64-linux-gnu/libSDLmain.a
 bin/Imacity: /usr/lib/x86_64-linux-gnu/libSDL.so
 bin/Imacity: /usr/lib/x86_64-linux-gnu/libGL.so
 bin/Imacity: /usr/lib/x86_64-linux-gnu/libGLU.so
 bin/Imacity: /usr/lib/x86_64-linux-gnu/libGLEW.so
 bin/Imacity: CMakeFiles/Imacity.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/laurine/Documents/IMAC2/OpenGL/Opengl_Projet_Capdeville_ChamotRooke_Rostoker/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable bin/Imacity"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable bin/Imacity"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Imacity.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -119,6 +223,6 @@ CMakeFiles/Imacity.dir/clean:
 .PHONY : CMakeFiles/Imacity.dir/clean
 
 CMakeFiles/Imacity.dir/depend:
-	cd /home/laurine/Documents/IMAC2/OpenGL/Opengl_Projet_Capdeville_ChamotRooke_Rostoker/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/laurine/Documents/IMAC2/OpenGL/Opengl_Projet_Capdeville_ChamotRooke_Rostoker /home/laurine/Documents/IMAC2/OpenGL/Opengl_Projet_Capdeville_ChamotRooke_Rostoker /home/laurine/Documents/IMAC2/OpenGL/Opengl_Projet_Capdeville_ChamotRooke_Rostoker/cmake-build-debug /home/laurine/Documents/IMAC2/OpenGL/Opengl_Projet_Capdeville_ChamotRooke_Rostoker/cmake-build-debug /home/laurine/Documents/IMAC2/OpenGL/Opengl_Projet_Capdeville_ChamotRooke_Rostoker/cmake-build-debug/CMakeFiles/Imacity.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3 /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3 /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/cmake-build-debug /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/cmake-build-debug /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/cmake-build-debug/CMakeFiles/Imacity.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Imacity.dir/depend
 

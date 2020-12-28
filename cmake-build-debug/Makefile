@@ -68,10 +68,10 @@ RM = /snap/clion/137/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/laurine/Documents/IMAC2/OpenGL/Opengl_Projet_Capdeville_ChamotRooke_Rostoker
+CMAKE_SOURCE_DIR = /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/laurine/Documents/IMAC2/OpenGL/Opengl_Projet_Capdeville_ChamotRooke_Rostoker/cmake-build-debug
+CMAKE_BINARY_DIR = /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/laurine/Documents/IMAC2/OpenGL/Opengl_Projet_Capdeville_ChamotRooke_Rostoker/cmake-build-debug/CMakeFiles /home/laurine/Documents/IMAC2/OpenGL/Opengl_Projet_Capdeville_ChamotRooke_Rostoker/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/cmake-build-debug/CMakeFiles /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/laurine/Documents/IMAC2/OpenGL/Opengl_Projet_Capdeville_ChamotRooke_Rostoker/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/laurine/Documents/IMAC2/OpenGL/Marche/Reorganisation_Classes_Base3/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -143,18 +143,167 @@ Imacity/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/build
 .PHONY : Imacity/fast
 
-#=============================================================================
-# Target rules for targets named glimac
+src/Camera.o: src/Camera.cpp.o
 
-# Build rule for target.
-glimac: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glimac
-.PHONY : glimac
+.PHONY : src/Camera.o
 
-# fast build rule for target.
-glimac/fast:
-	$(MAKE) $(MAKESILENT) -f lib/glimac/CMakeFiles/glimac.dir/build.make lib/glimac/CMakeFiles/glimac.dir/build
-.PHONY : glimac/fast
+# target to build an object file
+src/Camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/Camera.cpp.o
+.PHONY : src/Camera.cpp.o
+
+src/Camera.i: src/Camera.cpp.i
+
+.PHONY : src/Camera.i
+
+# target to preprocess a source file
+src/Camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/Camera.cpp.i
+.PHONY : src/Camera.cpp.i
+
+src/Camera.s: src/Camera.cpp.s
+
+.PHONY : src/Camera.s
+
+# target to generate assembly for a file
+src/Camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/Camera.cpp.s
+.PHONY : src/Camera.cpp.s
+
+src/FreeflyCamera.o: src/FreeflyCamera.cpp.o
+
+.PHONY : src/FreeflyCamera.o
+
+# target to build an object file
+src/FreeflyCamera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.o
+.PHONY : src/FreeflyCamera.cpp.o
+
+src/FreeflyCamera.i: src/FreeflyCamera.cpp.i
+
+.PHONY : src/FreeflyCamera.i
+
+# target to preprocess a source file
+src/FreeflyCamera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.i
+.PHONY : src/FreeflyCamera.cpp.i
+
+src/FreeflyCamera.s: src/FreeflyCamera.cpp.s
+
+.PHONY : src/FreeflyCamera.s
+
+# target to generate assembly for a file
+src/FreeflyCamera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.s
+.PHONY : src/FreeflyCamera.cpp.s
+
+src/Mesh.o: src/Mesh.cpp.o
+
+.PHONY : src/Mesh.o
+
+# target to build an object file
+src/Mesh.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/Mesh.cpp.o
+.PHONY : src/Mesh.cpp.o
+
+src/Mesh.i: src/Mesh.cpp.i
+
+.PHONY : src/Mesh.i
+
+# target to preprocess a source file
+src/Mesh.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/Mesh.cpp.i
+.PHONY : src/Mesh.cpp.i
+
+src/Mesh.s: src/Mesh.cpp.s
+
+.PHONY : src/Mesh.s
+
+# target to generate assembly for a file
+src/Mesh.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/Mesh.cpp.s
+.PHONY : src/Mesh.cpp.s
+
+src/Model.o: src/Model.cpp.o
+
+.PHONY : src/Model.o
+
+# target to build an object file
+src/Model.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/Model.cpp.o
+.PHONY : src/Model.cpp.o
+
+src/Model.i: src/Model.cpp.i
+
+.PHONY : src/Model.i
+
+# target to preprocess a source file
+src/Model.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/Model.cpp.i
+.PHONY : src/Model.cpp.i
+
+src/Model.s: src/Model.cpp.s
+
+.PHONY : src/Model.s
+
+# target to generate assembly for a file
+src/Model.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/Model.cpp.s
+.PHONY : src/Model.cpp.s
+
+src/Scene.o: src/Scene.cpp.o
+
+.PHONY : src/Scene.o
+
+# target to build an object file
+src/Scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/Scene.cpp.o
+.PHONY : src/Scene.cpp.o
+
+src/Scene.i: src/Scene.cpp.i
+
+.PHONY : src/Scene.i
+
+# target to preprocess a source file
+src/Scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/Scene.cpp.i
+.PHONY : src/Scene.cpp.i
+
+src/Scene.s: src/Scene.cpp.s
+
+.PHONY : src/Scene.s
+
+# target to generate assembly for a file
+src/Scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/Scene.cpp.s
+.PHONY : src/Scene.cpp.s
+
+src/glad.o: src/glad.c.o
+
+.PHONY : src/glad.o
+
+# target to build an object file
+src/glad.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/glad.c.o
+.PHONY : src/glad.c.o
+
+src/glad.i: src/glad.c.i
+
+.PHONY : src/glad.i
+
+# target to preprocess a source file
+src/glad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/glad.c.i
+.PHONY : src/glad.c.i
+
+src/glad.s: src/glad.c.s
+
+.PHONY : src/glad.s
+
+# target to generate assembly for a file
+src/glad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/glad.c.s
+.PHONY : src/glad.c.s
 
 src/main.o: src/main.cpp.o
 
@@ -183,6 +332,33 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/myShader.o: src/myShader.cpp.o
+
+.PHONY : src/myShader.o
+
+# target to build an object file
+src/myShader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/myShader.cpp.o
+.PHONY : src/myShader.cpp.o
+
+src/myShader.i: src/myShader.cpp.i
+
+.PHONY : src/myShader.i
+
+# target to preprocess a source file
+src/myShader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/myShader.cpp.i
+.PHONY : src/myShader.cpp.i
+
+src/myShader.s: src/myShader.cpp.s
+
+.PHONY : src/myShader.s
+
+# target to generate assembly for a file
+src/myShader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/myShader.cpp.s
+.PHONY : src/myShader.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,10 +368,30 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Imacity"
-	@echo "... glimac"
+	@echo "... src/Camera.o"
+	@echo "... src/Camera.i"
+	@echo "... src/Camera.s"
+	@echo "... src/FreeflyCamera.o"
+	@echo "... src/FreeflyCamera.i"
+	@echo "... src/FreeflyCamera.s"
+	@echo "... src/Mesh.o"
+	@echo "... src/Mesh.i"
+	@echo "... src/Mesh.s"
+	@echo "... src/Model.o"
+	@echo "... src/Model.i"
+	@echo "... src/Model.s"
+	@echo "... src/Scene.o"
+	@echo "... src/Scene.i"
+	@echo "... src/Scene.s"
+	@echo "... src/glad.o"
+	@echo "... src/glad.i"
+	@echo "... src/glad.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/myShader.o"
+	@echo "... src/myShader.i"
+	@echo "... src/myShader.s"
 .PHONY : help
 
 
