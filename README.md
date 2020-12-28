@@ -43,6 +43,8 @@ se placer dans le dossier en question `git init`
 
 `git remote add origin https://github.com/TSU50R1/IMAC-OpenGL-3D.git`
 
+`git branch Branche`
+
 `git add -A`
 
 `git commit -m "commentaire"`
