@@ -1,0 +1,199 @@
+News
+====
+
+
+## 1.16.0
+
+Changes:
+
+* Function `ini_get_bool_i()` has been created
+* New examples have been created (`examples/cplusplus/map.cpp`,
+  `examples/utilities/ini_string_preparse.h`)
+
+
+## 1.15.0
+
+* Public function `ini_global_set_lowercase_mode()` and global variable
+  `INI_GLOBAL_LOWERCASE_MODE` have been marked as deprecated
+* Global integer constant `INI_DISABLED_FLAG` and macro
+  `INI_IS_IMPLICIT_SUBSTR()` have been added to the public header
+
+
+## 1.14.0
+
+* Added implicit value check in `ini_array_break()`, `ini_array_collapse()`,
+  `ini_array_release()`, `ini_array_split()`, `ini_string_parse()` and
+  `ini_unquote()`
+* Integer constant `CONFINI_EROADDR` has been added to the `ConfiniInterruptNo`
+  `enum`
+* New examples have been created (`examples/miscellanea/parse_foreign.c`,
+  `examples/miscellanea/toml-like.c` and
+  `examples/utilities/clone_ini_dispatch.h`)
+
+
+## 1.13.0
+
+* Standard header `stdbool.h` has been added to the library's public header for
+  handling C++ compatibility
+* Module-definition file `src/libconfini.def` has been added to the package
+  tree for improving compatibility with **Microsoft Windows**
+* A `--without-io-api` option has been added to the `configure` script for
+  compiling the library without the C Standard I/O API
+* **GNU Autotests** have been implemented (via `make check`, `make finishcheck`
+  and `make installcheck` -- launch `make help` for more information about
+  these targets)
+
+
+## 1.12.0
+
+* Function `ini_get_float()` has been marked as deprecated for parsing a
+  `double` data type: use `ini_get_double()` instead
+
+
+## 1.11.0
+
+* Literal constants `CONFINI_EBADF` and `CONFINI_EFBIG` have been added to
+  the `ConfiniInterruptNo` `enum`
+* POSIX I/O API is now preferably used when available
+* A `--with-io-api=API` option has been added to the `configure` script for
+  selecting the I/O API to use) 
+
+
+## 1.10.4
+
+* Added a `--disable-devel` option to the `configure` script for generating
+  binary-only installations -- i.e. without installing headers, static
+  libraries, documentation, examples, etc.)
+* Added call to `strip.exe` to the `mgwmake.bat` script
+
+
+## 1.10.2
+
+* New examples have been created (`examples/utilities/load_ini_buffer.h` and
+  `examples/utilities/make_strarray.h`)
+* The `configure` script has been improved with a built-in support for complete
+  package renaming (using `--program-prefix=PREFIX`, `--program-suffix=SUFFX`
+  and `--program-transform-name='s/[OLDTEXT]/[NEWTEXT]/[g]'`) and several new
+  options (`--enable-version-info` and `--disable-version-info`, for
+  enabling/disabling **libtool** versioning system; `--enable-extended-config`,
+  for safely exporting package renamings at `configure` time, or any changes in
+  `configure.ac`, directly to `src/winres.rc` and `package.json` -- see
+  `INSTALL` and `./configure --help` for more information)
+
+
+## 1.10.0
+
+* Function `strip_ini_cache()` has been created
+* New examples have been created (`examples/topics/strip_ini_cache.c`)
+
+
+## 1.9.2
+
+* New examples have been created (`examples/miscellanea/colon_as_delimiter.c`)
+
+
+## 1.9.0
+
+* Added † `--multiversion` option to the † `autogen.sh` script for future major
+  version changes (see `INSTALL`)
+
+
+## 1.8.0
+
+* Introduced **libtool** versioning system for the compiled binary (versioning
+  begins with current version 1.8.0, represented as `0:0:0`); note that
+  **libtool** versioning system does not affect the versioning of the project
+  currently in use, but constitutes only a means for the linker to keep track
+  of incompatibilities between different releases of the library
+* New examples have been created (`examples/topics/ini_array_foreach.c`,
+  `examples/topics/ini_array_split.c` and `examples/miscellanea/stats_only.c`)
+
+
+## 1.7.0
+
+* Default format `INI_UNIXLIKE_FORMAT` has been created
+
+
+## 1.6.1 (unstable)
+
+* Function `ini_array_match()` has been created
+
+
+## 1.6.0 (unstable)
+
+* Functions `ini_array_shift()`, `ini_array_break()`, `ini_array_release()`
+  have been created
+* Boolean pair `OFF`/`ON` has been added to the list of supported INI booleans
+* Boolean pair `0`/`1` has been removed from the list of supported INI booleans
+* Redundant function † `ini_get_lazy_bool()` has been removed
+
+
+## 1.5.2 (unstable)
+
+* Option `IniFormat::section_paths` has been added to the `IniFormat` bitfield
+
+
+## 1.5.0 (unstable)
+
+* Added `IniFormat::preserve_empty_quotes` option to the `IniFormat` bitfield
+* Function `ini_string_parse()` has been created
+* Default value of `INI_GLOBAL_LOWERCASE_MODE` has been set to `FALSE`
+* Made sure that sections appended to root as pseudo-subsections will be
+  dispatched always without the leading dot
+* Made sure that key and section names will always be cleaned of empty quotes
+  in formats that support quotes (relevant for space collapsing)
+
+Due to the many renamings this release is largely incompatible with previous
+versions. However it is possible to reach full backward compatibility with
+version 1.4.2 by using the following aliases:
+
+    #define hash hash_marker
+    #define semicolon semicolon_marker
+    #define multiline_entries multiline_nodes
+    #define ini_collapse_array ini_array_collapse
+    #define ini_split_array ini_array_split
+    #define ini_set_implicit_value ini_global_set_implicit_value
+    #define INI_INSENSITIVE_LOWERCASE INI_GLOBAL_LOWERCASE_MODE
+    #define IniFormatId IniFormatNum
+    #define ini_format_get_id ini_fton
+    #define ini_format_set_to_id(DEST, SRC) (*(DEST) = ini_ntof(SRC))
+    #define INI_PARSE_COMMENT INI_DISABLED_OR_COMMENT
+    #define INI_SHOW_COMMENT INI_ONLY_COMMENT
+    #define INI_FORGET_COMMENT INI_IGNORE
+    #define INI_NORMAL_CHARACTER INI_IS_NOT_A_MARKER
+    #define INI_EVERYTHING_MULTILINE INI_MULTILINE_EVERYWHERE
+    #define INI_ACTIVE_AND_DISABLED_MULTILINE INI_BUT_COMMENTS
+    #define INI_ACTIVE_MULTILINE INI_BUT_COMMENTS
+    #define CONFINI_EIINTR CONFINI_IINTR
+    #define CONFINI_EFEINTR CONFINI_FEINTR
+
+
+## 1.4.1 (unstable)
+
+* Created string comparison functions `ini_string_match_ss()`,
+  `ini_string_match_si()` and `ini_string_match_ii()`
+* `stdint.h` header has been included in `confini.h`
+* `stdio.h` header has been removed from `confini.h`
+
+
+## 1.4.0 (unstable)
+
+* `stdio.h` header has been included in `confini.h`
+* Function `load_ini_file()` now uses a `FILE` handle instead of a path -- in
+  order to use a path (a string), the shortcut `load_ini_path()` has been
+  created
+
+
+## 1.3-1 (unstable)
+
+* † `ini_collapse_array()` has been created
+* `index` and `format` parameters have been added to callback function in
+  `ini_array_foreach()` and † `ini_split_array()`
+
+
+## 1.1-1 (unstable)
+
+* Added support for `INI_ANY_SPACE` (`0`) as delimiter in
+  `ini_array_get_length()`, `ini_array_foreach()` and † `ini_split_array()`
+* `IniFormat::no_spaces_in_names` has been created
+

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Imacity"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\CMake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/lea/Desktop/classeevent1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/lea/Desktop/classeevent1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/lea/Desktop/classeevent1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Imacity">
+				<Option output="/home/lea/Desktop/classeevent1/cmake-build-debug/bin/Imacity" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lea/Desktop/classeevent1/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lea/Desktop/classeevent1/include"/>
+					<Add directory="/home/lea/assimp/include/assimp"/>
+					<Add directory="/home/lea/assimp/include"/>
+					<Add directory="/home/lea/Desktop/classeevent1/lib/glm/include"/>
+					<Add directory="/home/lea/Desktop/classeevent1/lib/SOIL2"/>
+					<Add directory="/usr/include/GLFW"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 Imacity"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Imacity/fast">
+				<Option output="/home/lea/Desktop/classeevent1/cmake-build-debug/bin/Imacity" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lea/Desktop/classeevent1/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lea/Desktop/classeevent1/include"/>
+					<Add directory="/home/lea/assimp/include/assimp"/>
+					<Add directory="/home/lea/assimp/include"/>
+					<Add directory="/home/lea/Desktop/classeevent1/lib/glm/include"/>
+					<Add directory="/home/lea/Desktop/classeevent1/lib/SOIL2"/>
+					<Add directory="/usr/include/GLFW"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 Imacity/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/lea/Desktop/classeevent1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/lea/Desktop/classeevent1/include/Camera.hpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/lea/Desktop/classeevent1/include/Event.hpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/lea/Desktop/classeevent1/include/FreeflyCamera.hpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/lea/Desktop/classeevent1/include/LoadINI.hpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/lea/Desktop/classeevent1/include/Mesh.hpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/lea/Desktop/classeevent1/include/Model.hpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/lea/Desktop/classeevent1/include/Scene.hpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/lea/Desktop/classeevent1/include/myShader.hpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/lea/Desktop/classeevent1/src/Camera.cpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/lea/Desktop/classeevent1/src/FreeflyCamera.cpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/lea/Desktop/classeevent1/src/LoadINI.cpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/lea/Desktop/classeevent1/src/Mesh.cpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/lea/Desktop/classeevent1/src/Model.cpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/lea/Desktop/classeevent1/src/Scene.cpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/lea/Desktop/classeevent1/src/main.cpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/lea/Desktop/classeevent1/src/myShader.cpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/lea/Desktop/classeevent1/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/lea/Desktop/classeevent1/CMake/FindGLEW.cmake">
+			<Option virtualFolder="CMake Files\CMake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

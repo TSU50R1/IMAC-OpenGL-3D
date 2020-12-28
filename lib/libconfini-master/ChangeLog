@@ -1,0 +1,715 @@
+Change Log
+==========
+
+
+## 1.16.0 (2020-10-26)
+
+Changes:
+
+* Function `ini_get_bool_i()` has been created
+* Code review (private function `get_type_as_active()`; types `int8_t`,
+  `uint8_t`, `uint16_t` and `uint32_t` have been changed to to `int_least8_t`,
+  `uint_least8_t`, `uint_least16_t` and `uint_least32_t` everywhere)
+* Documentation
+* New examples have been created (`examples/cplusplus/map.cpp`,
+  `examples/utilities/ini_string_preparse.h`)
+
+
+## 1.15.0 (2020-10-06)
+
+Changes:
+
+* Public function `ini_global_set_lowercase_mode()` and global variable
+  `INI_GLOBAL_LOWERCASE_MODE` have been marked as deprecated
+* Global integer constant `INI_DISABLED_FLAG` and macro
+  `INI_IS_IMPLICIT_SUBSTR()` have been added to the public header
+* A minor incompatibility with **MSVC** has been solved
+* A small bug has been fixed (starting from version 1.10.2 `IniDispatch::v_len`
+  was not always set to `0` in case of empty `IniDispatch::value`)
+* Code review (`strip_ini_cache()`)
+* Minor changes that affect only the build system are now documented in a
+  separate file (see `autostuff/ChangeLog.md`)
+* Documentation
+* Examples
+
+
+## 1.14.2 (2020-09-24)
+
+Changes:
+
+* Improved re-implementation of `stdbool.h` in case of † `--with-io-api=nolibc`
+* Documentation
+* Examples
+* General package maintenance
+
+
+## 1.14.1 (2020-05-11)
+
+Changes:
+
+* Documentation
+
+
+## 1.14.0 (2020-03-01)
+
+Changes:
+
+* Added implicit value check in `ini_array_break()`, `ini_array_collapse()`,
+  `ini_array_release()`, `ini_array_split()`, `ini_string_parse()` and
+  `ini_unquote()`
+* Integer constant `CONFINI_EROADDR` has been added to the `ConfiniInterruptNo`
+  `enum`
+* Code review (`ini_array_foreach()`, `ini_get_bool()`, `ini_ntof()`, "bare
+  metal" functions `ini_get_int()`, `ini_get_lint()`, `ini_get_llint()` and
+  `ini_get_double()`, private functions `dqultrim_s()`, `get_type_as_active()`,
+  and `qultrim_h()`)
+* Documentation
+* New examples have been created (`examples/miscellanea/parse_foreign.c`,
+  `examples/miscellanea/toml-like.c` and
+  `examples/utilities/clone_ini_dispatch.h`)
+
+
+## 1.13.0 (2020-02-05)
+
+Changes:
+
+* Support for C++ has been improved
+* Standard header `stdbool.h` has been added to the library's public header for
+  handling C++ compatibility
+* Module-definition file `src/libconfini.def` has been added to the package
+  tree for improving compatibility with **Microsoft Windows**
+* Code page and UTF-8 strings in `src/winres.rc` have been adjusted
+* Code review
+* A `--without-io-api` option has been added to the `configure` script for
+  compiling the library without the C Standard I/O API
+* **GNU Autotests** have been implemented (via `make check`, `make finishcheck`
+  and `make installcheck` -- launch `make help` for more information about
+  these targets)
+* The package tree has been re-organized -- all the files needed for developing
+  the library and the documentation are now in the `dev` subdirectory
+* Code review in the `configure` script (options `--disable-maintainer-mode`,
+  `--enable-author-mode` and `--enable-htmldoc` have been created; the `xargs`
+  utility has been removed from the requirements for building the package) and
+  in the **GNU Make** environment (`Makefile.am`: the following targets have
+  been created: `make all-sources`, † `make baremetal-csources`,
+  † `make expired`, † `make official-csources`, † `make official-sources`,
+  `make official-symbols` and `make snapshot`, furthermore
+  † `make author-clean` has been renamed to `make bootstrap-clean`)
+* Added GCC option `-Wl,-out-implib,libconfini.lib` to the `mgwmake.bat` script
+* Documentation
+* Examples
+
+
+## 1.12.0 (2019-11-29)
+
+Changes:
+
+* Function `ini_get_float()` has been marked as deprecated for parsing a
+  `double` data type: use `ini_get_double()` instead
+* Small typo in `confini.h` has been fixed
+* Documentation
+* General review
+
+
+## 1.11.0 (2019-11-01)
+
+Changes:
+
+* Integer constants `CONFINI_EBADF` and `CONFINI_EFBIG` have been added to the
+  `ConfiniInterruptNo` `enum`
+* Code review in the I/O functions `load_ini_file()` and `load_ini_path()`
+  (made the POSIX I/O API available and made sure that all I/O failure checks
+  are performed)
+* Code review in the `configure` script (created a `--with-io-api=API` option
+  for manually selecting the I/O API to use) and in the **GNU Make**
+  environment (general review; created a `make git-clone` target)
+* Documentation
+
+
+## 1.10.4 (2019-10-19)
+
+Changes:
+
+* Paths of the INI files in the C examples have been changed in order to match
+  real locations
+* Code review in the `configure` script (made sure not to overwrite the
+  user-given `--docdir=[DIR]` argument; created a `--disable-devel` option for
+  generating binary-only installations -- i.e. without installing headers,
+  static libraries, documentation, examples, etc.) and in the **GNU Make**
+  environment (`Makefile.am`: removed † `make binary-image`, † `make
+  source-image` and † `make authors-suitcase` targets, renamed † `make
+  install-manifest` target to `make manifest`, created `make portable-builds`
+  and `make oblivion-clean` targets, improved `install-data-hook` and all the
+  helper targets; `src/Makefile.am`: moved the `CFLAGS` automatically guessed by
+  `AC_PROG_CC_C99` to `AM_CFLAGS`)
+* Added call to `strip.exe` to the `mgwmake.bat` script
+
+
+## 1.10.3 (2019-10-10)
+
+Changes:
+
+* The † `autogen.sh` script has been renamed to `bootstrap`
+* Code review in the **Autotools** environment (fixed `make distcheck` fail;
+  made sure that the `configure` and `bootstrap` scripts can be launched from
+  any path; created † `make source-image`, † `make authors-suitcase`, `make
+  source-release` and `make authors-copy` targets for better reproducing the
+  content of the package as released by its authors; created † `make
+  binary-image`, `make binary-release` and † `make install-manifest` targets
+  for aiding staged installations; created a † `make author-clean` target for
+  cleaning the source directory with the same degree of fury of `./bootstrap
+  --clean`; created a `make help` target for printing the list of commonly used
+  targets; replaced † `autogen.sh --multiversion` with `./configure
+  --with-other-versions` for creating a package able to coexist with other
+  versions of itself)
+* The `-Wl,--subsystem,windows` compiler option has been removed from
+  `mgwmake.bat`
+* The "GPL3 version 3" license string has been replaced everywhere with "GPL
+  version 3 or any later version" (or a similar label)
+* Documentation
+
+
+## 1.10.2 (2019-10-03)
+
+Changes:
+
+* Code review (`strip_ini_cache()`)
+* Subdirectory `tests` has been created
+* New examples have been created (`examples/utilities/load_ini_buffer.h` and
+  `examples/utilities/make_strarray.h`)
+* The `configure` script has been improved with a built-in support for complete
+  package renaming (using `--program-prefix=PREFIX`, `--program-suffix=SUFFX`
+  and `--program-transform-name=s/[OLDTEXT]/[NEWTEXT]/[g]`) and several new
+  options (`--enable-version-info` and `--disable-version-info`, for
+  enabling/disabling **libtool** versioning system; `--enable-extended-config`,
+  for safely exporting package renamings at `configure` time, or any changes in
+  `configure.ac`, directly to `src/winres.rc` and `package.json` -- see
+  `INSTALL` and `./configure --help` for more information)
+* The package tree has been re-organized -- all the files needed only at build
+  time have been moved into the `autostuff` subdirectory
+* Documentation
+
+
+## 1.10.1 (2019-09-19)
+
+Changes:
+
+* Code review (`strip_ini_cache()`) -- a small bug concerning `CR` + `LF` line
+  breaks has been fixed
+
+
+## 1.10.0 (2019-08-01)
+
+Changes:
+
+* Function `strip_ini_cache()` has been created -- see issue
+  [#9](https://github.com/madmurphy/libconfini/issues/9) -- most of the code of
+  `load_ini_file()` has now been moved to `strip_ini_cache()`
+* Code review (`load_ini_file()` and `load_ini_path()`)
+* Documentation
+* New examples have been created (`examples/topics/strip_ini_cache.c`)
+
+
+## 1.9.2 (2019-04-25)
+
+Changes:
+
+* Documentation
+* New examples have been created (`examples/miscellanea/colon_as_delimiter.c`)
+
+
+## 1.9.1 (2019-03-28)
+
+Changes:
+
+* Private function `further_cuts()`: fixed bug concerning blocks that had been
+  marked as `INI_IGNORE` wrongly re-marked as comments after 1.9.0 (due to this
+  bug error `CONFINI_EOOR` was thrown)
+* Private function `load_ini_file()`: fixed bug related to
+  `IniFormat::disabled_after_space` stopping to work properly after 1.9.0
+* Documentation
+
+
+## 1.9.0 (2019-03-26)
+
+Changes:
+
+* Improved performance of `load_ini_file()` (ambiguous disabled entries that
+  have been already tested with a negative result before invoking `f_init()`
+  will be internally marked as comments for not being tested twice -- an
+  example of such ambiguous disabled entries is `#[foo #bar]`)
+* Added † `--multiversion` option to the † `autogen.sh` script for future major
+  version changes (see `INSTALL`)
+* Added `--with-pkgconfigdir=DIR` option to the `configure` script
+* Private function `dqultrim_s()` has been created
+* Private macros `_LIBCONFINI_IS_COM_MARKER_()` and
+  `_LIBCONFINI_SC_INT_MARKER_` have been created
+* Private macro † `_LIBCONFINI_INLINE_MARKER_` has been renamed to
+  `_LIBCONFINI_IC_INT_MARKER_`
+* Code review (`load_ini_file()`, private functions `uncomment()` and
+  `further_cuts()`)
+* Documentation
+* Examples
+
+
+## 1.8.6 (2019-03-18)
+
+Changes:
+
+* Code review (`load_ini_file()`, private functions `get_type_as_active()` and
+  `further_cuts()`)
+* Documentation
+* Examples
+
+
+## 1.8.5 (2019-03-10)
+
+Changes:
+
+* Documentation
+
+
+## 1.8.4 (2019-01-08)
+
+Changes:
+
+* † `autogen.sh`: replaced `#!/bin/sh` with `#!/bin/bash` -- see issue
+  [#7](https://github.com/madmurphy/libconfini/issues/7)
+
+
+## 1.8.3 (2018-11-19)
+
+Changes:
+
+* Code review (`ini_string_match_ss()`, `ini_string_match_si()`,
+  `ini_array_foreach()`, `ini_array_split()`)
+* Documentation
+* Examples
+
+
+## 1.8.2 (2018-11-11)
+
+Changes:
+
+* Code review (private function `further_cuts()`)
+* Optimization flag `-O2` seems to be working better than `-O3` on Unix
+  systems: conditionally use `-O2` or `-O3` depending on the host
+* Use **libtool**'s `-avoid-version` only when compiling under native Microsoft
+  Windows environment
+* Added `--clean` option to the † `autogen.sh` script
+* Updated **Autotools** macros
+* Documentation
+* Examples
+
+
+## 1.8.1 (2018-11-04)
+
+Changes:
+
+* Code review (`load_ini_file()`, `ini_array_foreach()`, `ini_array_split()`,
+  private functions `is_some_space()`, `ltrim_s()`, `ltrim_h()`, `ltrim_hh()`,
+  `rtrim_s()` and `rtrim_h()`)
+* Updated **Autotools** macros
+* Documentation
+* Examples
+
+
+## 1.8.0 (2018-10-28)
+
+Changes:
+
+* Created `typedef`s of callback functions (types `IniStatsHandler` and
+  `IniDispHandler`, both required by `load_ini_file()` and `load_ini_path()`,
+  type `IniStrHandler`, required by `ini_array_split()`, and type
+  `IniSubstrHandler`, required by `ini_array_foreach()`)
+* Internal macro † `_LIBCONFINI_INIFORMAT_AS_()` has been renamed to
+  `INIFORMAT_TABLE_AS()` and marked as public -- please note that the arguments
+  that are passed to the user-given callback are now different
+* Introduced **libtool** versioning system for the compiled binary (versioning
+  begins with current version 1.8.0, represented as `0:0:0`); note that
+  **libtool** versioning system does not affect the versioning of the project
+  currently in use, but constitutes only a means for the linker to keep track
+  of incompatibilities between different releases of the library
+* Improved support for building **libconfini** under Microsoft Windows (created
+  Windows resource file `src/winres.rc`; conditionally added option
+  `-avoid-version` to `LDFLAGS` in order to skip foreign **libtool** versioning
+  system under Microsoft Windows; created batch script `mgwmake.bat` for
+  compiling **libconfini** under Microsoft Windows without **Autotools**)
+* Code review (`ini_fton()` and `ini_ntof()`)
+* Updated **Autotools** macros
+* Documentation
+* New examples have been created (`examples/topics/ini_array_foreach.c`,
+  `examples/topics/ini_array_split.c` and `examples/miscellanea/stats_only.c`)
+
+
+## 1.7.3 (2018-10-19)
+
+Changes:
+
+* Code review (`load_ini_file()`, private function `get_type_as_active()`)
+* Made sure that the `CLOSE_SECTION` character (`]`) is never followed by
+  anything else than empty spaces
+* Documentation
+
+
+## 1.7.2 (2018-10-12)
+
+Changes:
+
+* Code review (`load_ini_path()` -- see issue
+  [#6](https://github.com/madmurphy/libconfini/issues/6) concerning file
+  access under Microsoft Windows)
+* Documentation -- see issues
+  [#5](https://github.com/madmurphy/libconfini/issues/5) and
+  [#6](https://github.com/madmurphy/libconfini/issues/6)
+
+
+## 1.7.1 (2018-10-08)
+
+Changes:
+
+* Added `--disable-doc` and `--disable-examples` options to the `configure`
+  script
+* Added `--noconfigure` and `--help` options to the † `autogen.sh` script
+
+
+## 1.7.0 (2018-10-06)
+
+Changes:
+
+* Default format `INI_UNIXLIKE_FORMAT` has been created
+* † `IniFormat::no_disabled_after_space` has been renamed to
+  `IniFormat::disabled_after_space` (the field has opposite meaning now, please
+  invert your booleans accordingly)
+* Moved `#include <stdio.h>` from `confini.c` to `confini.h`
+* Documentation
+* Examples
+
+
+## 1.6.3 (2018-09-29 -- unstable)
+
+Changes:
+
+* Constant † `CONFINI_EFEOOR` has been renamed to `CONFINI_EOOR`
+* Code review
+* Documentation
+
+
+## 1.6.2 (2018-05-21 -- unstable)
+
+Changes:
+
+* Code review (private functions `ltrim_hh()`, `unescape_cr_lf()`,
+  `sanitize_section_path()`, `collapse_everything()`, `collapse_spaces()` and
+  `uncomment()`)
+* Documentation
+* Examples
+
+
+## 1.6.1 (2018-05-17 -- unstable)
+
+Changes:
+
+* Function `ini_array_match()` has been created
+* Documentation
+* Examples
+
+
+## 1.6.0 (2018-05-15 -- unstable)
+
+Changes:
+
+* Functions `ini_array_shift()`, `ini_array_break()`, `ini_array_release()`
+  have been created
+* Made sure that escapable characters cannot be used as delimiters in formats
+  that support escape sequences
+* Boolean pair `OFF`/`ON` has been added to the list of supported INI booleans
+* Boolean pair `0`/`1` has been removed from the list of supported INI booleans
+* Public macro `INIFORMAT_HAS_NO_ESC` has been created
+* Redundant function † `ini_get_lazy_bool()` has been removed
+* The buffer pointed by `IniDispatch::append_to` is now passed as `const`
+* Code review (`ini_string_match_ss()`, `ini_string_match_si()`,
+  `ini_string_match_ii()`, `ini_string_parse()`, `ini_array_get_length()`,
+  `ini_array_foreach()`, `ini_array_split()`, private functions `uncomment()`
+  and `further_cuts()`)
+* Private functions `get_metachar_pos()` and `collapse_empty_quotes()` have
+  been created
+* Private functions † `sanitize_key_name()` and † `get_delimiter_pos()` have
+  been renamed to `collapse_everything()` and `getn_metachar_pos()` (the latter
+  now requires one more argument)
+* Documentation
+* Examples
+
+
+## 1.5.2 (2018-05-06 -- unstable)
+
+Changes:
+
+* Added `IniFormat::section_paths` option to the `IniFormat` bitfield
+* Created `enum` `IniSectionPaths`
+* Made sure that implicit keys containing only empty quotes are ignored in
+  formats that support quotes
+* Private function † `ultrim_h()` has been renamed to `qultrim_h()` and
+  rewritten
+* Code review (`ini_array_foreach()`, `ini_array_split()`,
+  `ini_string_parse()`, private functions † `get_delimiter_pos()` and
+  `get_type_as_active()`)
+
+
+## 1.5.1 (2018-04-30 -- unstable)
+
+Changes:
+
+* Changed field order and size in the `IniFormat` bitfield
+* Changed internal values of `INI_KEY`, `INI_SECTION`, `INI_DISABLED_KEY` and
+  `INI_DISABLED_SECTION` (see `enum` `IniNodeType`)
+* Moved example INI files to `examples/ini_files`
+* Documentation
+
+
+## 1.5.0 (2018-04-22 -- unstable)
+
+Changes:
+
+* Added `IniFormat::preserve_empty_quotes` option to the `IniFormat` bitfield
+* † `IniFormat::hash`, † `IniFormat::semicolon` and
+  † `IniFormat::multiline_entries` have been renamed to
+  `IniFormat::hash_marker`, `IniFormat::semicolon_marker` and
+  `IniFormat::multiline_nodes`
+* Function `ini_string_parse()` has been created
+* Function † `ini_collapse_array()` has been renamed to `ini_array_collapse()`
+* Function † `ini_split_array()` has been renamed to `ini_array_split()`
+* Function † `ini_set_implicit_value()` has been renamed to
+  `ini_global_set_implicit_value()`
+* Function † `confini_global_set_lowercase_mode()` has been renamed to
+  `ini_global_set_lowercase_mode()`
+* Global variable † `INI_INSENSITIVE_LOWERCASE` has been renamed to
+  `INI_GLOBAL_LOWERCASE_MODE`
+* Default value of `INI_GLOBAL_LOWERCASE_MODE` has been set to `FALSE`
+* Data type † `IniFormatId` has been renamed to `IniFormatNum`
+* † `ini_format_get_id()` has been renamed to `ini_fton()`
+* † `ini_format_set_to_id()` has been renamed to `ini_ntof()` -- now accepts
+  only one argument and has a return value
+* Constants † `INI_PARSE_COMMENT`, † `INI_SHOW_COMMENT`, † `INI_FORGET_COMMENT`
+  and † `INI_NORMAL_CHARACTER` have been renamed to `INI_DISABLED_OR_COMMENT`,
+  `INI_ONLY_COMMENT`, `INI_IGNORE` and `INI_IS_NOT_A_MARKER`
+* Constants † `INI_EVERYTHING_MULTILINE`, † `INI_ACTIVE_AND_DISABLED_MULTILINE`
+  and † `INI_ACTIVE_MULTILINE` have been renamed to `INI_MULTILINE_EVERYWHERE`,
+  `INI_BUT_COMMENTS`, and `INI_BUT_DISABLED_AND_COMMENTS`
+* Constants † `CONFINI_EIINTR` and † `CONFINI_EFEINTR` have been renamed to
+  `CONFINI_IINTR` and `CONFINI_FEINTR`
+* `enum` tags † `ConfiniErrorNo` and † `IniComments` have been renamed to
+  `ConfiniInterruptNo` and `IniCommentMarker`
+* Private function † `sanitize_section_name()` has been renamed to
+  `sanitize_section_path()`
+* Created private function † `sanitize_key_name()`
+* Code review (`ini_array_get_length()`, `ini_string_match_si()`,
+  `ini_string_match_ii()`, private functions `sanitize_section_path()` and
+  `collapse_spaces()`)
+* Made sure that sections appended to root as pseudo-subsections will be
+  dispatched always without the leading dot
+* Made sure that key and section names will always be cleaned of empty quotes
+  in formats that support quotes (relevant for space collapsing)
+* Removed unused internationalization support from **Autotools**
+* Documentation
+* Examples
+
+Due to the many renamings this release is largely incompatible with previous
+versions. However it is possible to reach full backward compatibility with
+version 1.4.2 by using the following aliases:
+
+    #define hash hash_marker
+    #define semicolon semicolon_marker
+    #define multiline_entries multiline_nodes
+    #define ini_collapse_array ini_array_collapse
+    #define ini_split_array ini_array_split
+    #define ini_set_implicit_value ini_global_set_implicit_value
+    #define INI_INSENSITIVE_LOWERCASE INI_GLOBAL_LOWERCASE_MODE
+    #define IniFormatId IniFormatNum
+    #define ini_format_get_id ini_fton
+    #define ini_format_set_to_id(DEST, SRC) (*(DEST) = ini_ntof(SRC))
+    #define INI_PARSE_COMMENT INI_DISABLED_OR_COMMENT
+    #define INI_SHOW_COMMENT INI_ONLY_COMMENT
+    #define INI_FORGET_COMMENT INI_IGNORE
+    #define INI_NORMAL_CHARACTER INI_IS_NOT_A_MARKER
+    #define INI_EVERYTHING_MULTILINE INI_MULTILINE_EVERYWHERE
+    #define INI_ACTIVE_AND_DISABLED_MULTILINE INI_BUT_COMMENTS
+    #define INI_ACTIVE_MULTILINE INI_BUT_COMMENTS
+    #define CONFINI_EIINTR CONFINI_IINTR
+    #define CONFINI_EFEINTR CONFINI_FEINTR
+
+
+## 1.4.2 (2017-10-05 -- unstable)
+
+Changes:
+
+* Code review and bug fix in private function † `sanitize_section_name()`
+
+
+## 1.4.1 (2017-10-02 -- unstable)
+
+Changes:
+
+* Created global preprocessor constant `CONFINI_ERROR`
+* Created global variable † `INI_INSENSITIVE_LOWERCASE`
+* Created functions † `confini_global_set_lowercase_mode()`,
+  `ini_string_match_ss()`, `ini_string_match_si()` and `ini_string_match_ii()`
+* Code review (data types, `enum` † `ConfiniErrorNo`, `load_ini_file()`,
+  `ini_unquote()`)
+* Moved `#include <stdint.h>` from `confini.c` to `confini.h`
+* Moved back `#include <stdio.h>` from `confini.h` to `confini.c`
+* Fixed UTF-8 BOM bug
+* Documentation
+* Examples
+
+
+## 1.4.0 (2017-09-07 -- unstable)
+
+Changes:
+
+* Function `load_ini_file()` now uses a `FILE` handle instead of a path -- in
+  order to use a path (a string), the shortcut `load_ini_path()` has
+  been created
+* Added `#include <stdint.h>` to `confini.c`
+* Moved `#include <stdio.h>` from `confini.c` to `confini.h`
+* `nul` characters found in INI files will be skipped
+* `unsigned long int` replaced with `size_t` in return values of
+  `ini_unquote()`, `ini_array_get_length()` and † `ini_collapse_array()`
+* `unsigned int` replaced with `int` in return values of `load_ini_file()`,
+  `ini_array_foreach()` and † `ini_split_array()`
+* UTF-8 BOM recognized and skipped
+* Version numbering standardized (`${major}.${minor}.${revision}` instead of
+  `${major}.${minor}-${release}`)
+* Documentation
+
+
+## 1.3-5 (2017-05-04 -- unstable)
+
+Changes:
+
+* Fix for macOS compilation -- see:
+  https://github.com/madmurphy/libconfini/commit/4c3e6ec0b73ab5a0449cf08d3504f73fdf5c0edd
+
+
+## 1.3-4 (2016-11-10 -- unstable)
+
+Changes:
+
+* Fixed some bugs concerning comments and disabled entries
+* Removed recursion in private function `further_cuts()`
+
+
+## 1.3-3 (2016-11-02 -- unstable)
+
+Changes:
+
+* Files ending without EOL: bug fixed
+* Added new documentation
+
+
+## 1.3-2 (2016-10-28 -- unstable)
+
+Changes:
+
+* Non collapsing spaces in implicit keys: bug fixed
+* Code optimization
+* Added new documentation
+
+
+## 1.3-1 (2016-10-24 -- unstable)
+
+Changes:
+
+* † `ini_collapse_array()` has been created
+* `index` and `format` parameters have been added to callback function in
+  `ini_array_foreach()` and † `ini_split_array()`
+* † `INI_ERASE_COMMENT` has been renamed to † `INI_FORGET_COMMENT`
+* Added new documentation and examples
+
+
+## 1.2-2 (2016-10-21 -- unstable)
+
+Changes:
+
+* Fixed bug in inline comment formatting
+* Code optimization
+
+
+## 1.2-1 (2016-10-20 -- unstable)
+
+Changes:
+
+* Order of the `IniFormat` bitfield has been changed
+* † `IniFormat::implicit_is_special` has been renamed to
+  `IniFormat::implicit_is_not_empty`
+* † `IniFormat::no_collapsed_values` has been renamed to
+  `IniFormat::do_not_collapse_values`
+* † `IniDispatch::d_length` has been renamed to `IniDispatch::d_len`
+* † `IniDispatch::v_length` has been renamed to `IniDispatch::v_len`
+* `IniDispatch::at_len` (length of `IniDispatch::append_to`) has been created
+
+
+## 1.1-2 (2016-10-15 -- unstable)
+
+Changes:
+
+* † `IniFormatMask` has been renamed to `IniFormatId`
+* † `ini_format_set_from_mask()` has been renamed to † `ini_format_set_to_id()`
+* † `ini_format_calculate_mask()` has been renamed to † `ini_format_get_id()`
+* `IniFormat::no_spaces_in_names`: small bug fixed
+* General code review
+
+
+## 1.1-1 (2016-10-14 -- unstable)
+
+Changes:
+
+* Fixed quote nesting bug
+* enum `IniDelimiters` has been created
+* Added support for `INI_ANY_SPACE` (`0`) as delimiter in
+  `ini_array_get_length()`, `ini_array_foreach()` and † `ini_split_array()`
+* `IniFormat::no_spaces_in_names` has been created
+* † `IniFormat::no_disabled_after_spaces` has been renamed to
+  † `IniFormat::no_disabled_after_space`
+* † `IniFormat::preserve_spaces_in_values` has been renamed to
+  † `IniFormat::no_collapsed_values`
+
+
+## 1.0-1 (2016-10-10 -- unstable)
+
+Changes:
+
+* † `ini_array_getlength()` has been renamed to `ini_array_get_length()`
+* † `ini_getbool()` has been renamed to `ini_get_bool()`
+* † `ini_getlazybool()` has been renamed to `ini_get_lazy_bool()`
+* † `ini_getfloat()` has been renamed to `ini_get_float()`
+* † `ini_getllint()` has been renamed to `ini_get_llint()`
+* † `get_ini_format_mask()` has been renamed to † `ini_format_calculate_mask()`
+* † `read_ini_format_mask()` has been renamed to † `ini_format_set_from_mask()`
+
+
+## 0.9-4 (2016-10-07 -- unstable)
+
+Changes:
+
+* Small bug regarding multiline inline comments has been fixed
+
+
+## 0.9-3 (2016-10-06 -- unstable)
+
+Changes:
+
+* Small bug regarding inline comments has been fixed
+
+
+## 0.9-2 (2016-10-06 -- unstable)
+
+Changes:
+
+* Documentation has been moved to `docs/`
+
+
+## 0.9-1 (2016-10-05 -- unstable)
+
+libconfini 0.9-1 is ready to be published!
+

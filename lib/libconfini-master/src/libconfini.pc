@@ -1,0 +1,13 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+includedir=${prefix}/include
+
+Name: libconfini
+Description: Yet another INI parser
+Version: 1.16.0
+Requires: 
+Libs: -L${libdir} -lconfini
+Cflags: -I${includedir}
