@@ -12,7 +12,9 @@ TUTO
 - cmake
 - SDL, SDL2
 - ASSIMP
-- GLFW
+- GLEW
+- GLFW3
+- libconfini
 
 **GIT**
 

@@ -19,5 +19,4 @@ public:
 
     void loadScene();
     void renderScene(glm::mat4 &projection, glm::mat4 &view);
->>>>>>> origin/Classe_Scene
 };
