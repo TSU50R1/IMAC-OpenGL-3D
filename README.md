@@ -96,8 +96,7 @@ Installer libtool pour pouvoir compiler : `sudo apt-get install libtool-bin`
 faire : `./configure   `  
 si ça ne marche pas : `./bootstrap` puis `./configure `  
 puis : `make`  
-et enfin : `make install-strip` et si ça ne marche pas  `sudo make install-strip`   
-`  
+et enfin : `make install-strip` et si ça ne marche pas  `sudo make install-strip`
 
 
 
