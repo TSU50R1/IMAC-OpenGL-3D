@@ -57,6 +57,8 @@
 #	pragma message("GLM: GLM_GTC_matrix_transform extension included")
 #endif
 
+#define GLM_FORCE_RADIANS
+
 namespace glm
 {
 	/// @addtogroup gtc_matrix_transform
