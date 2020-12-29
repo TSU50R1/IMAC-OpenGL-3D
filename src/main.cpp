@@ -84,15 +84,15 @@ int main(){
 
     // build and compile shaders
     // -------------------------
-    //Shader ourShader1("shaders/modelLoading.vs.glsl", "shaders/modelLoading.fs.glsl");
-    //Shader ourShader2("shaders/modelLoading.vs.glsl", "shaders/modelLoading.fs.glsl");
+    Shader ourShader1("shaders/modelLoading.vs.glsl", "shaders/modelLoading.fs.glsl");
+    Shader lightingShader("shaders/lightning.vs.glsl", "shaders/lightning.fs.glsl");
 
 
     scene.loadScene();
     // load models
     // -----------
-   // Model ourModel1(myINIFile.getString("model" +  std::to_string(1) + ".models_directory"));
-   // Model ourModel2(myINIFile.getString("model" +  std::to_string(1) + ".models_directory"));
+    Model ourModel1(myINIFile.getString("model" +  std::to_string(1) + ".models_directory"));
+    Model ourModel2(myINIFile.getString("model" +  std::to_string(1) + ".models_directory"));
 
 
     // draw in wireframe
@@ -124,6 +124,12 @@ int main(){
         // view/projection transformations
         glm::mat4 projection = glm::perspective(glm::radians(70.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
         glm::mat4 view = camera.getViewMatrix();
+        glm::mat4 model = glm::mat4(1.);
+
+        //lightingShader.setMat4("model", glm::mat4(0.));
+        lightingShader.setVec4("ambiant_color", glm::vec4(0.4, 0.4, 0.4, 1.0));
+        lightingShader.setVec4("light_position", glm::vec4(1.0, 1.0, 1.0, 1.0));
+        lightingShader.setMat4("matrixpmv", projection * view * model);
 
         scene.renderScene(projection, view);
 
