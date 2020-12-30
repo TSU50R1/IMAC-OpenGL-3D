@@ -45,6 +45,7 @@
 
 #ifndef GLM_GTC_matrix_transform
 #define GLM_GTC_matrix_transform
+#define GLM_FORCE_RADIANS
 
 // Dependency:
 #include "../mat4x4.hpp"
