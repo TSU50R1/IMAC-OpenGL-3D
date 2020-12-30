@@ -11,10 +11,11 @@
 #include "LoadINI.hpp"
 #include "Scene.hpp"
 #include "Event.hpp"
-#include "Item.hpp"
+#include "Interaction.hpp"
 
 #include <iostream>
 #include <string>
+#include <cmath>
 
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -32,19 +33,30 @@ float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
 
-Event makeMove(camera);
-Item item(camera);
+Event makeMove;
+//Interaction item(camera);
 
+
+bool drawscene1 = true;
+bool drawscene2 = false;
+bool canMove = true;
 
 // timing
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
-int main(){
-    Scene scene ("ini_files/Scene1.conf");
+bool est_dans_zone(const FreeflyCamera &camera, float x_zone, float z_zone,  float R){
+    if (sqrt(pow(x_zone-camera.get_Position().x,2)+pow(z_zone-camera.get_Position().z,2))<=R){
+        std::cout << "Est dans la zone" << std:: endl;
+        return true;
+    }else{
+        return false;
+    }
+}
 
-    IniLoadMap myINIFile;
-    myINIFile.mapPath("ini_files/Scene1.conf");
+int main(){
+    Scene scene1 ("ini_files/Scene1.conf");
+    Scene scene2 ("ini_files/Scene2.conf");
 
 
     // glfw: initialize and configure
@@ -93,20 +105,23 @@ int main(){
     Shader lightingShader("shaders/lightning.vs.glsl", "shaders/lightning.fs.glsl");
 
 
-    scene.loadScene();
+    scene1.loadScene();
+    scene2.loadScene();
     // load models
     // -----------
-    Model ourModel1(myINIFile.getString("model" +  std::to_string(1) + ".models_directory"));
-    Model ourModel2(myINIFile.getString("model" +  std::to_string(1) + ".models_directory"));
 
 
-    // draw in wireframe
-    //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
     // render loop
     // -----------
-    static const float speed = 0.2;
+    bool dans_zone;
     while (!glfwWindowShouldClose(window)){
+        float R = 1.;
+        float x_zone = -8.15;
+        float z_zone = 2.50;
+        est_dans_zone(camera, x_zone, z_zone, R);
+
+        std::cout << camera.get_Position().x << " " <<camera.get_Position().y << " " <<camera.get_Position().z    << std::endl;
         // per-frame time logic
         // --------------------
         float currentFrame = glfwGetTime();
@@ -115,7 +130,7 @@ int main(){
 
         // input
         // -----
-        makeMove.processInput(window, speed);
+        makeMove.processInput(window, camera,  drawscene1, drawscene2,canMove);
         // render
         // ------
         glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
@@ -134,17 +149,15 @@ int main(){
         glm::mat4 model = glm::mat4(1.);
 
 
-
-        model = glm::mat4(1.0f);
-        model = glm::translate(model, lightPos);
-        model = glm::scale(model, glm::vec3(0.2f));
-
         //lightingShader.setMat4("model", glm::mat4(0.));
         //lightingShader.setVec4("ambiant_color", glm::vec4(0.4, 0.4, 0.4, 1.0));
         //lightingShader.setVec4("light_position", glm::vec4(1.0, 1.0, 1.0, 1.0));
         //lightingShader.setMat4("matrixpmv", projection * view * model);
 
-        scene.renderScene(projection, view);
+        if (drawscene1 == true)
+            scene1.renderScene(projection, view);
+        if (drawscene2 == true)
+            scene2.renderScene(projection, view);
 
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
@@ -218,19 +231,20 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height){
 // glfw: whenever the mouse moves, this callback is called
 // -------------------------------------------------------
 void mouse_callback(GLFWwindow* window, double xpos, double ypos){
-    if (firstMouse){
+    if (firstMouse) {
         lastX = xpos;
         lastY = ypos;
         firstMouse = false;
     }
 
     float xoffset = xpos - lastX;
-    float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
-
     lastX = xpos;
     lastY = ypos;
 
-   // camera.ProcessMouseMovement(xoffset, yoffset);
+    glfwGetCursorPos(window, &xpos, &ypos);
+    camera.rotateLeft((xoffset)/60.f);
+
+    //camera.rotateUp((mousePositionY - ypos)/60.f);
 }
 
 // glfw: whenever the mouse scroll wheel scrolls, this callback is called
