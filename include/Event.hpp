@@ -11,5 +11,4 @@ public:
     Event(FreeflyCamera &_camera);
     ~Event();
     void processInput(GLFWwindow *window, float t);
-
 };
