@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/lea/Desktop/classeevent1/src/Camera.cpp" "/home/lea/Desktop/classeevent1/cmake-build-debug/CMakeFiles/Imacity.dir/src/Camera.cpp.o"
-  "/home/lea/Desktop/classeevent1/src/Event.cpp" "/home/lea/Desktop/classeevent1/cmake-build-debug/CMakeFiles/Imacity.dir/src/Event.cpp.o"
-  "/home/lea/Desktop/classeevent1/src/FreeflyCamera.cpp" "/home/lea/Desktop/classeevent1/cmake-build-debug/CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.o"
-  "/home/lea/Desktop/classeevent1/src/LoadINI.cpp" "/home/lea/Desktop/classeevent1/cmake-build-debug/CMakeFiles/Imacity.dir/src/LoadINI.cpp.o"
-  "/home/lea/Desktop/classeevent1/src/Mesh.cpp" "/home/lea/Desktop/classeevent1/cmake-build-debug/CMakeFiles/Imacity.dir/src/Mesh.cpp.o"
-  "/home/lea/Desktop/classeevent1/src/Model.cpp" "/home/lea/Desktop/classeevent1/cmake-build-debug/CMakeFiles/Imacity.dir/src/Model.cpp.o"
-  "/home/lea/Desktop/classeevent1/src/Scene.cpp" "/home/lea/Desktop/classeevent1/cmake-build-debug/CMakeFiles/Imacity.dir/src/Scene.cpp.o"
-  "/home/lea/Desktop/classeevent1/src/main.cpp" "/home/lea/Desktop/classeevent1/cmake-build-debug/CMakeFiles/Imacity.dir/src/main.cpp.o"
-  "/home/lea/Desktop/classeevent1/src/myShader.cpp" "/home/lea/Desktop/classeevent1/cmake-build-debug/CMakeFiles/Imacity.dir/src/myShader.cpp.o"
+  "/home/lea/Desktop/savesclasseevents/src/Camera.cpp" "/home/lea/Desktop/savesclasseevents/cmake-build-debug/CMakeFiles/Imacity.dir/src/Camera.cpp.o"
+  "/home/lea/Desktop/savesclasseevents/src/Event.cpp" "/home/lea/Desktop/savesclasseevents/cmake-build-debug/CMakeFiles/Imacity.dir/src/Event.cpp.o"
+  "/home/lea/Desktop/savesclasseevents/src/FreeflyCamera.cpp" "/home/lea/Desktop/savesclasseevents/cmake-build-debug/CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.o"
+  "/home/lea/Desktop/savesclasseevents/src/LoadINI.cpp" "/home/lea/Desktop/savesclasseevents/cmake-build-debug/CMakeFiles/Imacity.dir/src/LoadINI.cpp.o"
+  "/home/lea/Desktop/savesclasseevents/src/Mesh.cpp" "/home/lea/Desktop/savesclasseevents/cmake-build-debug/CMakeFiles/Imacity.dir/src/Mesh.cpp.o"
+  "/home/lea/Desktop/savesclasseevents/src/Model.cpp" "/home/lea/Desktop/savesclasseevents/cmake-build-debug/CMakeFiles/Imacity.dir/src/Model.cpp.o"
+  "/home/lea/Desktop/savesclasseevents/src/Scene.cpp" "/home/lea/Desktop/savesclasseevents/cmake-build-debug/CMakeFiles/Imacity.dir/src/Scene.cpp.o"
+  "/home/lea/Desktop/savesclasseevents/src/main.cpp" "/home/lea/Desktop/savesclasseevents/cmake-build-debug/CMakeFiles/Imacity.dir/src/main.cpp.o"
+  "/home/lea/Desktop/savesclasseevents/src/myShader.cpp" "/home/lea/Desktop/savesclasseevents/cmake-build-debug/CMakeFiles/Imacity.dir/src/myShader.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

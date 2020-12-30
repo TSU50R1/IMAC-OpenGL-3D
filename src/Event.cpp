@@ -1,9 +1,8 @@
 #include "Event.hpp"
 #include <iostream>
 
-Event::Event(FreeflyCamera _camera){
-  this->m_camera = _camera;
-}
+Event::Event(FreeflyCamera &_camera) : m_camera(_camera){}
+
 Event::~Event(){};
 
 void Event::processInput(GLFWwindow *window, float t){

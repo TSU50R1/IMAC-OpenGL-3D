@@ -19,7 +19,7 @@
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
-void processInput(GLFWwindow *window, float t);
+//void processInput(GLFWwindow *window, float t);
 
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -82,25 +82,15 @@ int main(){
     // -----------------------------
     glEnable(GL_DEPTH_TEST);
 
-    // build and compile shaders
-    // -------------------------
-    //Shader ourShader1("shaders/modelLoading.vs.glsl", "shaders/modelLoading.fs.glsl");
-    //Shader ourShader2("shaders/modelLoading.vs.glsl", "shaders/modelLoading.fs.glsl");
-
-
     scene.loadScene();
-    // load models
-    // -----------
-   // Model ourModel1(myINIFile.getString("model" +  std::to_string(1) + ".models_directory"));
-   // Model ourModel2(myINIFile.getString("model" +  std::to_string(1) + ".models_directory"));
-
 
     // draw in wireframe
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
     // render loop
     // -----------
-    static const float speed = 0.2;
+    Event event (camera);
+    static const float speed = 0.4;
     while (!glfwWindowShouldClose(window)){
         // per-frame time logic
         // --------------------
@@ -110,16 +100,12 @@ int main(){
 
         // input
         // -----
-        Event event (camera);
         event.processInput(window, speed);
 
         // render
         // ------
         glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-        // don't forget to enable shader before setting uniforms
-
 
         // view/projection transformations
         glm::mat4 projection = glm::perspective(glm::radians(70.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
@@ -142,57 +128,6 @@ int main(){
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
-/*void processInput(GLFWwindow *window, float t){
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
-    if (glfwGetKey(window, GLFW_KEY_I) == GLFW_PRESS)
-    {
-      // call camera to move FORWARD
-      camera.moveFront(t);
-    }
-
-    if (glfwGetKey(window, GLFW_KEY_K) == GLFW_PRESS)
-    {
-      // call camera to move BACKWARD
-      camera.moveFront(-t);
-    }
-
-    if (glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS)
-    {
-      // call camera to move LEFT
-      camera.moveLeft(t/60);
-    }
-
-    if (glfwGetKey(window, GLFW_KEY_L) == GLFW_PRESS)
-    {
-      // call camera to move RIGHT
-      camera.moveLeft(-t/60);
-    }
-
-    if (glfwGetKey(window, GLFW_KEY_U) == GLFW_PRESS)
-    {
-      // call camera to ROTATE LEFT
-      camera.rotateLeft(t);
-    }
-
-    if (glfwGetKey(window, GLFW_KEY_O) == GLFW_PRESS)
-    {
-      // call camera to ROTATE RIGHT
-      camera.rotateLeft(-t);
-    }
-
-    if (glfwGetKey(window, GLFW_KEY_Y) == GLFW_PRESS)
-    {
-      // call camera to move ROTATE UP
-      camera.rotateUp(t);
-    }
-
-    if (glfwGetKey(window, GLFW_KEY_H) == GLFW_PRESS)
-    {
-      // call camera to move ROTATE DOWN
-      camera.rotateUp(-t);
-    }
-}*/
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
 // ---------------------------------------------------------------------------------------------
