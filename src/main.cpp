@@ -89,7 +89,7 @@ int main(){
 
     // build and compile shaders
     // -------------------------
-    Shader ourShader1("shaders/modelLoading.vs.glsl", "shaders/modelLoading.fs.glsl");
+    //Shader ourShader1("shaders/modelLoading.vs.glsl", "shaders/modelLoading.fs.glsl");
     Shader lightingShader("shaders/lightning.vs.glsl", "shaders/lightning.fs.glsl");
 
 
@@ -159,53 +159,6 @@ int main(){
     return 0;
 }
 
-// process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
-// ---------------------------------------------------------------------------------------------------------
-
-/*void processInput(GLFWwindow *window, float t){
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
-    if (glfwGetKey(window, GLFW_KEY_I) == GLFW_PRESS)
-    {
-      // call camera to move FORWARD
-      camera.moveFront(t);
-    }
-    if (glfwGetKey(window, GLFW_KEY_K) == GLFW_PRESS)
-    {
-      // call camera to move BACKWARD
-      camera.moveFront(-t);
-    }
-    if (glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS)
-    {
-      // call camera to move LEFT
-      camera.moveLeft(t/60);
-    }
-    if (glfwGetKey(window, GLFW_KEY_L) == GLFW_PRESS)
-    {
-      // call camera to move RIGHT
-      camera.moveLeft(-t/60);
-    }
-    if (glfwGetKey(window, GLFW_KEY_U) == GLFW_PRESS)
-    {
-      // call camera to ROTATE LEFT
-      camera.rotateLeft(t);
-    }
-    if (glfwGetKey(window, GLFW_KEY_O) == GLFW_PRESS)
-    {
-      // call camera to ROTATE RIGHT
-      camera.rotateLeft(-t);
-    }
-    if (glfwGetKey(window, GLFW_KEY_Y) == GLFW_PRESS)
-    {
-      // call camera to move ROTATE UP
-      camera.rotateUp(t);
-    }
-    if (glfwGetKey(window, GLFW_KEY_H) == GLFW_PRESS)
-    {
-      // call camera to move ROTATE DOWN
-      camera.rotateUp(-t);
-    }
-}*/
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
 // ---------------------------------------------------------------------------------------------
