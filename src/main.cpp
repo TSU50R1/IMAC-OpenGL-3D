@@ -11,6 +11,7 @@
 #include "LoadINI.hpp"
 #include "Scene.hpp"
 #include "Event.hpp"
+#include "Item.hpp"
 
 #include <iostream>
 #include <string>
@@ -30,6 +31,10 @@ FreeflyCamera camera;
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
+
+Event makeMove(camera);
+Item item(camera);
+
 
 // timing
 float deltaTime = 0.0f;
@@ -110,9 +115,7 @@ int main(){
 
         // input
         // -----
-        Event event (camera);
-        event.processInput(window, speed);
-
+        makeMove.processInput(window, speed);
         // render
         // ------
         glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
@@ -120,16 +123,26 @@ int main(){
 
         // don't forget to enable shader before setting uniforms
 
+        lightingShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
+        lightingShader.setVec3("lightColor",  1.0f, 1.0f, 1.0f);
+
+        glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
         // view/projection transformations
         glm::mat4 projection = glm::perspective(glm::radians(70.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
         glm::mat4 view = camera.getViewMatrix();
         glm::mat4 model = glm::mat4(1.);
 
+
+
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, lightPos);
+        model = glm::scale(model, glm::vec3(0.2f));
+
         //lightingShader.setMat4("model", glm::mat4(0.));
-        lightingShader.setVec4("ambiant_color", glm::vec4(0.4, 0.4, 0.4, 1.0));
-        lightingShader.setVec4("light_position", glm::vec4(1.0, 1.0, 1.0, 1.0));
-        lightingShader.setMat4("matrixpmv", projection * view * model);
+        //lightingShader.setVec4("ambiant_color", glm::vec4(0.4, 0.4, 0.4, 1.0));
+        //lightingShader.setVec4("light_position", glm::vec4(1.0, 1.0, 1.0, 1.0));
+        //lightingShader.setMat4("matrixpmv", projection * view * model);
 
         scene.renderScene(projection, view);
 
@@ -148,6 +161,7 @@ int main(){
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
+
 /*void processInput(GLFWwindow *window, float t){
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);

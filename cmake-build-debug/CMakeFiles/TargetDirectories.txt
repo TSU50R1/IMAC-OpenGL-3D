@@ -1,0 +1,3 @@
+/home/tsu/Documents/Imacity/IMAC-OpenGL-3D/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/tsu/Documents/Imacity/IMAC-OpenGL-3D/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/tsu/Documents/Imacity/IMAC-OpenGL-3D/cmake-build-debug/CMakeFiles/Imacity.dir

@@ -1,12 +1,10 @@
 #include <iostream>
+#include <string>
 
 #include "Item.hpp"
 
-void Item::get() {
-    //si click sur objet = true
-    //count ++
-    //this.id = count
-}
+Item::Item(FreeflyCamera &_camera) : m_camera(_camera){}
+Item::~Item(){};
 
 
 void Item::display() {
@@ -18,10 +16,23 @@ void Item::display() {
     for (unsigned int i = 0; i < this->count; i++) {
         //afficher en haut à droite les images
     }
-};
+}
+
+void Item::get() {
+    if (this->zone.pos_x == this->m_camera.m_fPosition.x && this->zone.pos_y == this->m_camera.m_fPosition.y) //faire si (position caméra = position de la zone)
+    {
+        this-> count ++;
+        this-> id = this->zone.id;
+        this->display();
+    }
+    std::cout << "aucun item ici" << std::endl;
+}
 
 
 void Item::use() {
-    //si on clique sur une porte utilisée automatiquement
-    //on passe à une autre scène
-};
+    if (this->door.id == this->id) {
+        Scene scene ("ini_files/" + std::to_string(this->door.id) + ".conf");
+        scene.loadScene();
+    }
+    std::cout << "Impossible d'utiliser l'item ici" << std::endl;
+}

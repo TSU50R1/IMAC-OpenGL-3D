@@ -1,9 +1,7 @@
 #include "Event.hpp"
 #include <iostream>
 
-Event::Event(FreeflyCamera _camera){
-  this->m_camera = _camera;
-}
+Event::Event(FreeflyCamera &_camera) : m_camera(_camera){};
 Event::~Event(){};
 
 void Event::processInput(GLFWwindow *window, float t){
@@ -25,4 +23,12 @@ void Event::processInput(GLFWwindow *window, float t){
       m_camera.rotateUp(t);
     if (glfwGetKey(window, GLFW_KEY_H) == GLFW_PRESS)
       m_camera.rotateUp(-t);
+}
+
+void Event::interact(GLFWwindow *window, Item &item){
+    if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) {
+      item.use();
+      item.get();
+    }
+    std::cout << "aucune intéraction disponible" << std::endl;
 }

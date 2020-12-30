@@ -1,20 +1,22 @@
 #pragma once
-#include <glm/gtc/matrix_transform.hpp>
+
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
 #include "stb_image.h"
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 
+#include "FreeflyCamera.hpp"
 #include "Model.hpp"
 #include "Scene.hpp"
-#include "Event.hpp"
 
 class Item {
 
 public:
-    
-    Item(){}
-    ~Item(){}    
+    FreeflyCamera &m_camera;
+    Item(FreeflyCamera &_camera);
+    ~Item(); 
     void get();
     void display();
     void use();
@@ -24,4 +26,16 @@ private:
     int count;
     int id;
     Scene* scene;
+    struct Door {
+    	int id;
+		float pos_x;
+		float pos_y;
+    };
+    Door door;
+    struct Zone {
+    	int id;
+		float pos_x;
+		float pos_y;
+    };
+    Zone zone;
 };
