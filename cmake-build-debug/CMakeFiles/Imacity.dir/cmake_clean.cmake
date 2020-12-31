@@ -2,7 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Imacity.dir/src/Camera.cpp.o"
   "CMakeFiles/Imacity.dir/src/Event.cpp.o"
   "CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.o"
-  "CMakeFiles/Imacity.dir/src/Interaction.cpp.o"
+  "CMakeFiles/Imacity.dir/src/GamePlay.cpp.o"
   "CMakeFiles/Imacity.dir/src/LoadINI.cpp.o"
   "CMakeFiles/Imacity.dir/src/Mesh.cpp.o"
   "CMakeFiles/Imacity.dir/src/Model.cpp.o"

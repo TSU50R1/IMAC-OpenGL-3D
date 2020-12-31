@@ -6,7 +6,7 @@ CMakeFiles/Imacity.dir/src/Camera.cpp.o
 CMakeFiles/Imacity.dir/src/Event.cpp.o
  ../include/Event.hpp
  ../include/FreeflyCamera.hpp
- ../include/Interaction.hpp
+ ../include/GamePlay.hpp
  ../include/LoadINI.hpp
  ../include/Mesh.hpp
  ../include/Model.hpp
@@ -208,9 +208,9 @@ CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.o
  ../lib/glm/include/glm/vec4.hpp
  ../lib/glm/include/glm/vector_relational.hpp
  /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/FreeflyCamera.cpp
-CMakeFiles/Imacity.dir/src/Interaction.cpp.o
+CMakeFiles/Imacity.dir/src/GamePlay.cpp.o
  ../include/FreeflyCamera.hpp
- ../include/Interaction.hpp
+ ../include/GamePlay.hpp
  ../include/LoadINI.hpp
  ../include/Mesh.hpp
  ../include/Model.hpp
@@ -297,7 +297,7 @@ CMakeFiles/Imacity.dir/src/Interaction.cpp.o
  ../lib/glm/include/glm/vec3.hpp
  ../lib/glm/include/glm/vec4.hpp
  ../lib/glm/include/glm/vector_relational.hpp
- /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/Interaction.cpp
+ /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/GamePlay.cpp
  /home/laurine/assimp/include/assimp/Compiler/poppack1.h
  /home/laurine/assimp/include/assimp/Compiler/pstdint.h
  /home/laurine/assimp/include/assimp/Compiler/pushpack1.h
@@ -655,7 +655,7 @@ CMakeFiles/Imacity.dir/src/Scene.cpp.o
 CMakeFiles/Imacity.dir/src/main.cpp.o
  ../include/Event.hpp
  ../include/FreeflyCamera.hpp
- ../include/Interaction.hpp
+ ../include/GamePlay.hpp
  ../include/LoadINI.hpp
  ../include/Mesh.hpp
  ../include/Model.hpp

@@ -115,18 +115,18 @@ CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/FreeflyCamera.cpp -o CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.s
 
-CMakeFiles/Imacity.dir/src/Interaction.cpp.o: CMakeFiles/Imacity.dir/flags.make
-CMakeFiles/Imacity.dir/src/Interaction.cpp.o: ../src/Interaction.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Imacity.dir/src/Interaction.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Imacity.dir/src/Interaction.cpp.o -c /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/Interaction.cpp
+CMakeFiles/Imacity.dir/src/GamePlay.cpp.o: CMakeFiles/Imacity.dir/flags.make
+CMakeFiles/Imacity.dir/src/GamePlay.cpp.o: ../src/GamePlay.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Imacity.dir/src/GamePlay.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Imacity.dir/src/GamePlay.cpp.o -c /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/GamePlay.cpp
 
-CMakeFiles/Imacity.dir/src/Interaction.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Imacity.dir/src/Interaction.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/Interaction.cpp > CMakeFiles/Imacity.dir/src/Interaction.cpp.i
+CMakeFiles/Imacity.dir/src/GamePlay.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Imacity.dir/src/GamePlay.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/GamePlay.cpp > CMakeFiles/Imacity.dir/src/GamePlay.cpp.i
 
-CMakeFiles/Imacity.dir/src/Interaction.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Imacity.dir/src/Interaction.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/Interaction.cpp -o CMakeFiles/Imacity.dir/src/Interaction.cpp.s
+CMakeFiles/Imacity.dir/src/GamePlay.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Imacity.dir/src/GamePlay.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/GamePlay.cpp -o CMakeFiles/Imacity.dir/src/GamePlay.cpp.s
 
 CMakeFiles/Imacity.dir/src/LoadINI.cpp.o: CMakeFiles/Imacity.dir/flags.make
 CMakeFiles/Imacity.dir/src/LoadINI.cpp.o: ../src/LoadINI.cpp
@@ -211,7 +211,7 @@ Imacity_OBJECTS = \
 "CMakeFiles/Imacity.dir/src/Camera.cpp.o" \
 "CMakeFiles/Imacity.dir/src/Event.cpp.o" \
 "CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.o" \
-"CMakeFiles/Imacity.dir/src/Interaction.cpp.o" \
+"CMakeFiles/Imacity.dir/src/GamePlay.cpp.o" \
 "CMakeFiles/Imacity.dir/src/LoadINI.cpp.o" \
 "CMakeFiles/Imacity.dir/src/Mesh.cpp.o" \
 "CMakeFiles/Imacity.dir/src/Model.cpp.o" \
@@ -225,7 +225,7 @@ Imacity_EXTERNAL_OBJECTS =
 bin/Imacity: CMakeFiles/Imacity.dir/src/Camera.cpp.o
 bin/Imacity: CMakeFiles/Imacity.dir/src/Event.cpp.o
 bin/Imacity: CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.o
-bin/Imacity: CMakeFiles/Imacity.dir/src/Interaction.cpp.o
+bin/Imacity: CMakeFiles/Imacity.dir/src/GamePlay.cpp.o
 bin/Imacity: CMakeFiles/Imacity.dir/src/LoadINI.cpp.o
 bin/Imacity: CMakeFiles/Imacity.dir/src/Mesh.cpp.o
 bin/Imacity: CMakeFiles/Imacity.dir/src/Model.cpp.o

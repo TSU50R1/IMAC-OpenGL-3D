@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Imacity"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\CMake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Imacity">
+				<Option output="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/bin/Imacity" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/include"/>
+					<Add directory="/home/laurine/assimp/include/assimp"/>
+					<Add directory="/home/laurine/assimp/include"/>
+					<Add directory="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/lib/glm/include"/>
+					<Add directory="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/lib/SOIL2"/>
+					<Add directory="/usr/include/GLFW"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 Imacity"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Imacity/fast">
+				<Option output="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/bin/Imacity" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/include"/>
+					<Add directory="/home/laurine/assimp/include/assimp"/>
+					<Add directory="/home/laurine/assimp/include"/>
+					<Add directory="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/lib/glm/include"/>
+					<Add directory="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/lib/SOIL2"/>
+					<Add directory="/usr/include/GLFW"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 Imacity/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/include/Camera.hpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/include/Event.hpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/include/FreeflyCamera.hpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/include/GamePlay.hpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/include/LoadINI.hpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/include/Mesh.hpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/include/Model.hpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/include/Scene.hpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/include/myShader.hpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/Camera.cpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/Event.cpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/FreeflyCamera.cpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/GamePlay.cpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/LoadINI.cpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/Mesh.cpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/Model.cpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/Scene.cpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/main.cpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/myShader.cpp">
+			<Option target="Imacity"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/CMake/FindGLEW.cmake">
+			<Option virtualFolder="CMake Files\CMake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

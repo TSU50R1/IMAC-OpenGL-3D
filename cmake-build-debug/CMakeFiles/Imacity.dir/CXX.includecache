@@ -13,8 +13,8 @@ GLFW/glfw3.h
 -
 FreeflyCamera.hpp
 ../include/FreeflyCamera.hpp
-Interaction.hpp
-../include/Interaction.hpp
+GamePlay.hpp
+../include/GamePlay.hpp
 
 ../include/FreeflyCamera.hpp
 vector
@@ -26,7 +26,7 @@ glm/glm.hpp
 glm/gtc/matrix_transform.hpp
 -
 
-../include/Interaction.hpp
+../include/GamePlay.hpp
 GL/glew.h
 -
 GLFW/glfw3.h
@@ -39,12 +39,20 @@ assimp/scene.h
 -
 assimp/postprocess.h
 -
+string
+-
+map
+-
+vector
+-
 FreeflyCamera.hpp
 ../include/FreeflyCamera.hpp
 Model.hpp
 ../include/Model.hpp
 Scene.hpp
 ../include/Scene.hpp
+LoadINI.hpp
+../include/LoadINI.hpp
 
 ../include/LoadINI.hpp
 string

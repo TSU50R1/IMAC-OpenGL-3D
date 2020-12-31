@@ -18,5 +18,5 @@ public:
     ~Scene();
 
     void loadScene();
-    void renderScene(glm::mat4 &projection, glm::mat4 &view);
+    void renderScene(const glm::mat4 &projection, const glm::mat4 &view);
 };

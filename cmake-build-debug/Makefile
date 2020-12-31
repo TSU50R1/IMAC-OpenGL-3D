@@ -223,32 +223,32 @@ src/FreeflyCamera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.s
 .PHONY : src/FreeflyCamera.cpp.s
 
-src/Interaction.o: src/Interaction.cpp.o
+src/GamePlay.o: src/GamePlay.cpp.o
 
-.PHONY : src/Interaction.o
+.PHONY : src/GamePlay.o
 
 # target to build an object file
-src/Interaction.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/Interaction.cpp.o
-.PHONY : src/Interaction.cpp.o
+src/GamePlay.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/GamePlay.cpp.o
+.PHONY : src/GamePlay.cpp.o
 
-src/Interaction.i: src/Interaction.cpp.i
+src/GamePlay.i: src/GamePlay.cpp.i
 
-.PHONY : src/Interaction.i
+.PHONY : src/GamePlay.i
 
 # target to preprocess a source file
-src/Interaction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/Interaction.cpp.i
-.PHONY : src/Interaction.cpp.i
+src/GamePlay.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/GamePlay.cpp.i
+.PHONY : src/GamePlay.cpp.i
 
-src/Interaction.s: src/Interaction.cpp.s
+src/GamePlay.s: src/GamePlay.cpp.s
 
-.PHONY : src/Interaction.s
+.PHONY : src/GamePlay.s
 
 # target to generate assembly for a file
-src/Interaction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/Interaction.cpp.s
-.PHONY : src/Interaction.cpp.s
+src/GamePlay.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/src/GamePlay.cpp.s
+.PHONY : src/GamePlay.cpp.s
 
 src/LoadINI.o: src/LoadINI.cpp.o
 
@@ -430,9 +430,9 @@ help:
 	@echo "... src/FreeflyCamera.o"
 	@echo "... src/FreeflyCamera.i"
 	@echo "... src/FreeflyCamera.s"
-	@echo "... src/Interaction.o"
-	@echo "... src/Interaction.i"
-	@echo "... src/Interaction.s"
+	@echo "... src/GamePlay.o"
+	@echo "... src/GamePlay.i"
+	@echo "... src/GamePlay.s"
 	@echo "... src/LoadINI.o"
 	@echo "... src/LoadINI.i"
 	@echo "... src/LoadINI.s"

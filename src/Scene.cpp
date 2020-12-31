@@ -24,7 +24,7 @@ void Scene::loadScene(){
     }
 }
 
-void Scene::renderScene(glm::mat4 &projection, glm::mat4 &view ){
+void Scene::renderScene(const glm::mat4 &projection,const  glm::mat4 &view ){
     for (size_t i= 0; i<m_nbModels; i++){
         //le .conf indique quel shader utiliser pour chaque model
         int num_shader = std::stoi(m_IniFile.getString("model" +  std::to_string(i) +".num_shader"));
@@ -32,7 +32,7 @@ void Scene::renderScene(glm::mat4 &projection, glm::mat4 &view ){
         m_shaders[num_shader]->setMat4("projection", projection);
         m_shaders[num_shader]->setMat4("view", view);
 
-        // rendu du model charcher à partir des valeurs de transformation données dans les fichier
+        // rendu du model chargé à partir des valeurs de transformation données dans les fichier
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model,glm::vec3(std::stof(m_IniFile.getString("model" +  std::to_string(i) +".translate_x")),
                                                   std::stof(m_IniFile.getString("model" +  std::to_string(i) +".translate_y")),

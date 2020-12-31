@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/include -I/home/laurine/assimp/include/assimp -I/home/laurine/assimp/include -I/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/lib/glm/include -I/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/lib/SOIL2 -I/usr/include/GLFW
 
-CXX_FLAGS =   -std=c++11
+CXX_FLAGS = -g   -std=c++11
 
