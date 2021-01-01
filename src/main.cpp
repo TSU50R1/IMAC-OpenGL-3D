@@ -87,6 +87,7 @@ int main(){
         std::cout << camera.get_Position().x<< " " << camera.get_Position().z << std::endl;
         Game.verifie_zones_portes(camera);
         Game.verifie_zone_cle(camera);
+        Game.reste_dans_scene(camera);
         // per-frame time logic
         // --------------------
         float currentFrame = glfwGetTime();

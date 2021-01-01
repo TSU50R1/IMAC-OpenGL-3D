@@ -1,11 +1,13 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 
 #include "GamePlay.hpp"
 
 GamePlay::GamePlay() :m_check_zone(false),
                         m_peut_ramasser(false),
-                        m_nb_scenes(4){
+                        m_nb_scenes(4),
+                        m_check_scene_limite(true){
 
     m_scenes.push_back(new Scene("ini_files/Scene1.conf"));
     m_scenes.push_back(new Scene("ini_files/Scene2.conf"));
@@ -86,21 +88,29 @@ void GamePlay::verifie_zones_portes(const FreeflyCamera &camera){
     }
 }
 
-bool GamePlay::est_dans_scene(const FreeflyCamera &camera, const int i){
+void GamePlay::est_dans_scene( FreeflyCamera &camera, const int i){
+    assert (i>=0 && i<4 && "numerode scene incorrect");
+   // m_check_scene_limite =  true;
     float x_zone = std::stof(m_File_Description_Zones.getString("zone_scene" +  std::to_string(i) + ".x"));
-    float z_zone = std::stof(m_File_Description_Zones.getString("zone_scene" +  std::to_string(i) + ".y"));
+    float z_zone = std::stof(m_File_Description_Zones.getString("zone_scene" +  std::to_string(i) + ".z"));
     float R = std::stof(m_File_Description_Zones.getString("zone_scene" +  std::to_string(i) + ".r"));
-        if (sqrt(pow(x_zone-camera.get_Position().x,2)+pow(z_zone-camera.get_Position().z,2))>=R){
-            return true;
+    float pas_recul = 0.07;
+        if (sqrt(pow(x_zone-camera.get_Position().x,2)+pow(z_zone-camera.get_Position().z,2))<=R){
+            m_check_scene_limite =  true;
+            std::cout << "en dans de la zone" << std::endl;
         }else{
-            return false;
+             m_check_scene_limite = false;
+             std::cout << "en dehors de la zone" << std::endl;
+             //si on arrive sur la limite du deplacement, il faut reculer la camera dans la direction formé par le vecteur entre
+             //la position courante et le centre de la scene
+             camera.set_Position(camera.get_Position().x-pas_recul*(camera.get_Position().x-x_zone),0.0,camera.get_Position().z- pas_recul*(camera.get_Position().z-z_zone));
         }
 }
 
-bool GamePlay::reste_dans_scene(const FreeflyCamera &camera){
-    for(int i = 0; i<m_nb_scenes; i++){
+void GamePlay::reste_dans_scene( FreeflyCamera &camera){
+    for(int i = 1; i<m_nb_scenes; i++){
         if (m_afficher_scene[i])
-            return est_dans_scene(camera, i);
+            est_dans_scene(camera, i);
     }
 }
 
@@ -114,13 +124,14 @@ void GamePlay::verifie_zone_cle(const FreeflyCamera &camera){
 }
 
 //permet le changement de scene
-void GamePlay::changement_scene(const int numero_scene){
+void GamePlay::changement_scene(const int numero_scene, FreeflyCamera &camera){
     assert (numero_scene <4 && numero_scene >=0 && "Numero de scene incorrect");
     for (size_t i = 0; i< m_nb_scenes; i++){
         m_afficher_scene[i] = false;
         m_peut_entrer_scene[i] = false;
     }
     m_afficher_scene[numero_scene] = true;
+    this->set_camera_new_scene(camera, numero_scene);
 }
 
 //récupération de la clé et desactivation de son affichage dans sa scene
@@ -134,3 +145,9 @@ void GamePlay::fin_jeu(){
     m_afficher_scene[0] = false;
 }
 
+void GamePlay::set_camera_new_scene(FreeflyCamera &camera,const int i){
+    assert (i <4 && i >=0 && "Numero de scene incorrect");
+    camera.set_Position(std::stof(m_File_Description_Zones.getString("zone_scene" +  std::to_string(i) + ".x")),
+                        0.0,
+                       std::stof(m_File_Description_Zones.getString("zone_scene" +  std::to_string(i) + ".z")));
+}

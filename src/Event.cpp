@@ -18,23 +18,26 @@ void Event::processInput(GLFWwindow *window, FreeflyCamera &camera, GamePlay &ga
         if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
             glfwSetWindowShouldClose(window, true);
 
-        if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-            m_key_mouve_W=true;
-        if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-            m_key_mouve_S=true;
-        if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-            m_key_mouve_A=true;
-        if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-            m_key_mouve_D=true;
+        //le mouvement dans chaque scene ne peut se faire que dans un certain rayon
+        if (game.get_check_scene_limite()) {
+            if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+                m_key_mouve_W = true;
+            if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+                m_key_mouve_S = true;
+            if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+                m_key_mouve_A = true;
+            if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+                m_key_mouve_D = true;
 
-        if (m_key_mouve_W)
-            camera.moveFront(m_speed);
-        if (m_key_mouve_D)
-            camera.moveLeft(-m_speed / 60);
-        if (m_key_mouve_A)
-            camera.moveLeft(m_speed / 60);
-        if (m_key_mouve_S)
-            camera.moveFront(-m_speed);
+            if (m_key_mouve_W)
+                camera.moveFront(m_speed);
+            if (m_key_mouve_D)
+                camera.moveLeft(-m_speed / 60);
+            if (m_key_mouve_A)
+                camera.moveLeft(m_speed / 60);
+            if (m_key_mouve_S)
+                camera.moveFront(-m_speed);
+        }
 
 
     if (glfwGetKey(window, GLFW_KEY_C) == GLFW_PRESS) {
@@ -43,8 +46,8 @@ void Event::processInput(GLFWwindow *window, FreeflyCamera &camera, GamePlay &ga
             if (game.get_bool_scene(1) ||
                 game.get_bool_scene(2) ||
                 game.get_bool_scene(3)) {
-                camera.set_Position(0.0f, 0.0f, 0.0f);
-                game.changement_scene(0);
+                //camera.set_Position(0.0f, 0.0f, 0.0f);
+                game.changement_scene(0,camera);
             }else {
                 for (int i = 0; i < game.get_nb_scene(); i++) {
                     if (game.get_bool_peut_entrer(i)) {
@@ -53,8 +56,7 @@ void Event::processInput(GLFWwindow *window, FreeflyCamera &camera, GamePlay &ga
                                 if (i == 0){
                                     game.fin_jeu();
                                 } else {
-                                    camera.set_Position(0.3045f, 0.0f, -58.7628f);
-                                    game.changement_scene(i);
+                                    game.changement_scene(i,camera);
                                 }
                             }
                        // }else{

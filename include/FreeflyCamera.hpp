@@ -18,7 +18,7 @@ class FreeflyCamera {
 
     public :
         void set_Position (const float &x, const float &y, const float &z);
-        glm::vec3 get_Position  () const ;
+        glm::vec3 get_Position  () const;
 
         FreeflyCamera():
         m_fPosition(glm::vec3 (0. ,0. ,0. )),  m_fPhi (180), m_fTheta(0.){
@@ -31,6 +31,7 @@ class FreeflyCamera {
         void moveFront(float t);
         void rotateLeft( float degrees);
         void rotateUp (float degrees);
+
 
         glm::mat4 getViewMatrix();
 };
