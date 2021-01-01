@@ -6,12 +6,14 @@ Event::Event() :m_key_mouve_A(false),
                 m_key_mouve_S(false),
                 m_key_mouve_W(false),
                 m_canMove(true),
+                m_canGet(true),
                 m_speed(0.2){};
 
 Event::~Event(){};
 
 
 void Event::processInput(GLFWwindow *window, FreeflyCamera &camera, GamePlay &game){
+
 
         if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
             glfwSetWindowShouldClose(window, true);
@@ -38,19 +40,43 @@ void Event::processInput(GLFWwindow *window, FreeflyCamera &camera, GamePlay &ga
     if (glfwGetKey(window, GLFW_KEY_C) == GLFW_PRESS) {
         if (m_canMove) {
             m_canMove = false;
-            if (game.get_bool_scene(1) == true ||
-                game.get_bool_scene(2) == true ||
-                game.get_bool_scene(3) == true) {
+            if (game.get_bool_scene(1) ||
+                game.get_bool_scene(2) ||
+                game.get_bool_scene(3)) {
                 camera.set_Position(0.0f, 0.0f, 0.0f);
                 game.changement_scene(0);
             }else {
                 for (int i = 0; i < game.get_nb_scene(); i++) {
                     if (game.get_bool_peut_entrer(i)) {
-                        if (game.get_bool_scene(0) == true) {
-                            camera.set_Position(0.3045f, 0.0f, -58.7628f);
-                            game.changement_scene(i);
-                        }
+                       // if (game.possede_cle(i)){
+                            if (game.get_bool_scene(0)) {
+                                if (i == 0){
+                                    game.fin_jeu();
+                                } else {
+                                    camera.set_Position(0.3045f, 0.0f, -58.7628f);
+                                    game.changement_scene(i);
+                                }
+                            }
+                       // }else{
+                      //      std::cout << "Vous n'avez pas la clé, il faut la chercher !"<< std::endl;
+                      //  }
                     }
+                }
+            }
+        }
+    }
+
+    if (glfwGetKey(window, GLFW_KEY_H) == GLFW_PRESS) {
+       if (m_canGet) {
+            m_canGet = false;
+            if (game.get_bool_scene(0)){
+                if(game.get_bool_peut_ramasser()){
+                    game.recupere_cle(0);
+                }
+            }
+            for(size_t i = 1; i<4; i++) {
+                if (game.get_bool_scene(i)) {
+                    game.recupere_cle(i);
                 }
             }
         }
@@ -59,6 +85,8 @@ void Event::processInput(GLFWwindow *window, FreeflyCamera &camera, GamePlay &ga
     //gestion des relevé de touche pour éviter les effets d'inertie
     if (glfwGetKey(window, GLFW_KEY_C) == GLFW_RELEASE)
         m_canMove = true;
+    if (glfwGetKey(window, GLFW_KEY_H) == GLFW_RELEASE)
+        m_canGet = true;
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_RELEASE)
         m_key_mouve_A = false;
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_RELEASE)

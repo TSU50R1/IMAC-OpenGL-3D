@@ -15,9 +15,7 @@ private:
     bool m_key_mouve_W;
     bool m_key_mouve_D;
     bool m_canMove;
-    float m_lastX = 800 / 2.0f;
-    float m_lastY = 600 / 2.0f;
-    bool m_firstMouse = true;
+    bool m_canGet;
 
 
 public:

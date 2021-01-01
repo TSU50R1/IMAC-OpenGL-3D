@@ -19,19 +19,19 @@
 class GamePlay {
 private:
     int m_nb_scenes;
-    bool m_ramasser_cle;
     bool m_check_zone;
 
     std::vector <bool> m_afficher_scene;
     std::vector <bool> m_peut_entrer_scene;
+    bool m_peut_ramasser;
     std::vector <Scene*> m_scenes;
-    std::map <std::string, bool> m_cles;
+
 
     IniLoadMap m_File_Description_Zones;
     size_t m_nb_zones_portes;
-    size_t m_nb_zones_cle;
 
 public:
+    std::map <std::string, bool> m_cles;
     GamePlay();
 
     ~GamePlay();
@@ -42,11 +42,17 @@ public:
     bool possede_cle (const int i);
     void verifie_zones_portes(const FreeflyCamera &camera);
     void changement_scene(const int numero_scene);
-
+    void recupere_cle(const int i);
+    void fin_jeu();
+    void verifie_zone_cle(const FreeflyCamera &camera);
+    bool reste_dans_scene(const FreeflyCamera &camera);
+    bool est_dans_scene(const FreeflyCamera &camera, const int i);
 
 
     inline bool get_bool_scene(const int i) const {return m_afficher_scene[i];}
     inline void set_bool_scene(const bool afficher, const int i){ m_afficher_scene[i] = afficher;}
     inline bool get_bool_peut_entrer(const int i) const {return m_peut_entrer_scene[i];}
     inline int get_nb_scene() const {return m_nb_scenes;}
+    inline bool get_bool_peut_ramasser(){return m_peut_ramasser;}
+
 };

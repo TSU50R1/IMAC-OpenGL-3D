@@ -84,8 +84,9 @@ int main(){
     // -----------
     bool dans_zone;
     while (!glfwWindowShouldClose(window)){
-        //std::cout << camera.get_Position().x<< " " << camera.get_Position().z << std::endl;
+        std::cout << camera.get_Position().x<< " " << camera.get_Position().z << std::endl;
         Game.verifie_zones_portes(camera);
+        Game.verifie_zone_cle(camera);
         // per-frame time logic
         // --------------------
         float currentFrame = glfwGetTime();
