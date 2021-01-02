@@ -102,16 +102,15 @@ int main(){
     scene.loadScene();
     // load models
 
-    //lightingShader.setInt("material.diffuse", 0);
-    //lightingShader.setInt("material.specular", 1);
-
-
     // draw in wireframe
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     lightingShader.use();
 
     lightingShader.setInt("material.diffuse", 0);
     lightingShader.setInt("material.specular", 1);
+
+    //lightingShader.setInt("texture1", 0);    
+    //glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
 
     // render loop
     // -----------
@@ -146,16 +145,20 @@ int main(){
 
         modelShader.use();
         lightingShader.use();
-        lightingShader.setInt("material.diffuse", 0);
+        lightingShader.setInt("material.diffuse", 0.2);
         lightingShader.setInt("material.specular", 1);
+
+        //lightingShader.setVec3("viewPos", camera.m_fPosition);
+        //lightingShader.setVec3("lightPos", lightPos);
 
         //lightingShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
         //lightingShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
         //lightingShader.setVec3("lightPos", lightPos);
 
+
         // directional light
         lightingShader.setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
-        lightingShader.setVec3("dirLight.ambient", 0.05f, 0.05f, 0.05f);
+        lightingShader.setVec3("dirLight.ambient", 0.5f, 0.05f, 0.5f);
         lightingShader.setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
         lightingShader.setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
         // point light 1
