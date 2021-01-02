@@ -11,7 +11,6 @@ class FreeflyCamera {
         float m_fTheta;
         glm::vec3 m_LeftVector;
         glm::vec3 m_UpVector;
-        glm::vec3 m_fPosition; // position de le caméra
 
         void computeDirectionVectors();
 

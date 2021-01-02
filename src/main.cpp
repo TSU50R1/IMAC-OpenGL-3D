@@ -89,7 +89,7 @@ int main(){
     Shader modelShader("shaders/modelLoading.vs.glsl", "shaders/modelLoading.fs.glsl");
     Shader lightingShader("shaders/lightning.vs.glsl", "shaders/lightning.fs.glsl");
 
-    scene.loadScene();
+    //scene.loadScene();
     // load models
 
     // draw in wireframe
@@ -219,7 +219,7 @@ int main(){
         lightingShader.setMat4("view", view);
 
 
-        scene.renderScene(projection, view);
+        //scene.renderScene(projection, view);
 
         Game.drawScene(projection, view);
 
