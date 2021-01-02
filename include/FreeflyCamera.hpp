@@ -9,7 +9,6 @@ class FreeflyCamera {
     private :
         float m_fPhi; // données sphériques du vecteur F
         float m_fTheta;
-        glm::vec3 m_FrontVector;
         glm::vec3 m_LeftVector;
         glm::vec3 m_UpVector;
 
@@ -17,7 +16,7 @@ class FreeflyCamera {
 
 
     public :
-
+        glm::vec3 m_FrontVector;
         glm::vec3 m_fPosition; // position de le caméra
         FreeflyCamera():
         m_fPosition(glm::vec3 (0. ,0. ,0. )),  m_fPhi (180), m_fTheta(0.){

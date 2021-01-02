@@ -27,28 +27,32 @@ void Scene::loadScene(){
 void Scene::renderScene(glm::mat4 &projection, glm::mat4 &view ){
     for (size_t i= 0; i<m_nbModels; i++){
         //le .conf indique quel shader utiliser pour chaque model
-        int num_shader = std::stoi(m_IniFile.getString("model" +  std::to_string(i) +".num_shader"));
-        m_shaders[num_shader]->use();
-        m_shaders[num_shader]->setMat4("projection", projection);
-        m_shaders[num_shader]->setMat4("view", view);
+        int num_shader[m_nbShaders];
+            for (size_t j= 0; j < m_nbShaders; j++){
+            num_shader[j] = j;
 
-        // rendu du model charcher à partir des valeurs de transformation données dans les fichier
-        glm::mat4 model = glm::mat4(1.0f);
-        model = glm::translate(model,glm::vec3(std::stof(m_IniFile.getString("model" +  std::to_string(i) +".translate_x")),
-                                                  std::stof(m_IniFile.getString("model" +  std::to_string(i) +".translate_y")),
-                                                  std::stof(m_IniFile.getString("model" +  std::to_string(i) +".translate_z"))
-                                                  ));
-        float angleRad = glm::radians(std::stof(m_IniFile.getString("model" +  std::to_string(i) +".radians")));
-        model = glm::rotate(model, angleRad, glm::vec3(std::stoi(m_IniFile.getString("model" +  std::to_string(i) +".rotate_x")),
-                                                       std::stoi(m_IniFile.getString("model" +  std::to_string(i) +".rotate_y")),
-                                                       std::stoi(m_IniFile.getString("model" +  std::to_string(i) +".rotate_z"))
-        ));
 
-        model = glm::scale(model,glm::vec3(std::stof(m_IniFile.getString("model" +  std::to_string(i) +".scale_x")),
-                                               std::stof(m_IniFile.getString("model" +  std::to_string(i) +".scale_y")),
-                                               std::stof(m_IniFile.getString("model" +  std::to_string(i) +".scale_z"))
-        ));
-        m_shaders[num_shader]->setMat4("model", model);
-        m_models[i]->Draw(*m_shaders[num_shader]);
+
+
+
+            // rendu du model charcher à partir des valeurs de transformation données dans les fichier
+            glm::mat4 model = glm::mat4(1.0f);
+            model = glm::translate(model,glm::vec3(std::stof(m_IniFile.getString("model" +  std::to_string(i) +".translate_x")),
+                                                      std::stof(m_IniFile.getString("model" +  std::to_string(i) +".translate_y")),
+                                                      std::stof(m_IniFile.getString("model" +  std::to_string(i) +".translate_z"))
+                                                      ));
+            float angleRad = glm::radians(std::stof(m_IniFile.getString("model" +  std::to_string(i) +".radians")));
+            model = glm::rotate(model, angleRad, glm::vec3(std::stoi(m_IniFile.getString("model" +  std::to_string(i) +".rotate_x")),
+                                                           std::stoi(m_IniFile.getString("model" +  std::to_string(i) +".rotate_y")),
+                                                           std::stoi(m_IniFile.getString("model" +  std::to_string(i) +".rotate_z"))
+            ));
+
+            model = glm::scale(model,glm::vec3(std::stof(m_IniFile.getString("model" +  std::to_string(i) +".scale_x")),
+                                                   std::stof(m_IniFile.getString("model" +  std::to_string(i) +".scale_y")),
+                                                   std::stof(m_IniFile.getString("model" +  std::to_string(i) +".scale_z"))
+            ));
+            m_shaders[j]->setMat4("model", model);
+            m_models[i]->Draw(*m_shaders[j]);
+        }
     }
 }
