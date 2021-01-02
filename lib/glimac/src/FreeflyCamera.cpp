@@ -2,7 +2,6 @@
 #include <iostream>
 #include <glimac/FreeflyCamera.hpp>
 
-namespace glimac {
 
 void FreeflyCamera::computeDirectionVectors(){
         float Phi = glm::radians(this->m_fPhi); 
@@ -12,7 +11,13 @@ void FreeflyCamera::computeDirectionVectors(){
         this->m_FrontVector = glm::vec3 (cos(Theta)*sin(Phi), sin(Theta),cos(Theta)*cos(Phi));
         this->m_LeftVector = glm::vec3 (sin(PhiPlusPiSur2), 0., cos(PhiPlusPiSur2));
         this->m_UpVector = glm::vec3 (glm::cross(this->m_FrontVector, this->m_LeftVector)); //produit vectoriel de F et L
-} 
+}
+
+glm::vec3 FreeflyCamera::get_Position const(){
+    return m_fPosition;
+}
+
+
 
 void FreeflyCamera::moveLeft(float t){
         this-> m_fPosition+= t* this-> m_LeftVector;
@@ -40,5 +45,3 @@ glm::mat4 FreeflyCamera::getViewMatrix(){
 
 
 FreeflyCamera::~FreeflyCamera() {}
-
-}
