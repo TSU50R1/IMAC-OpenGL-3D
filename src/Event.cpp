@@ -40,7 +40,7 @@ void Event::processInput(GLFWwindow *window, FreeflyCamera &camera, GamePlay &ga
         }
 
 
-    if (glfwGetKey(window, GLFW_KEY_C) == GLFW_PRESS) {
+    if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) {
         if (m_canMove) {
             m_canMove = false;
             if (game.get_bool_scene(1) ||
@@ -68,7 +68,7 @@ void Event::processInput(GLFWwindow *window, FreeflyCamera &camera, GamePlay &ga
         }
     }
 
-    if (glfwGetKey(window, GLFW_KEY_H) == GLFW_PRESS) {
+    if (glfwGetKey(window, GLFW_KEY_X) == GLFW_PRESS) {
        if (m_canGet) {
             m_canGet = false;
             if (game.get_bool_scene(0)){
@@ -85,9 +85,9 @@ void Event::processInput(GLFWwindow *window, FreeflyCamera &camera, GamePlay &ga
     }
 
     //gestion des relevé de touche pour éviter les effets d'inertie
-    if (glfwGetKey(window, GLFW_KEY_C) == GLFW_RELEASE)
+    if (glfwGetKey(window, GLFW_KEY_X) == GLFW_RELEASE)
         m_canMove = true;
-    if (glfwGetKey(window, GLFW_KEY_H) == GLFW_RELEASE)
+    if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_RELEASE)
         m_canGet = true;
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_RELEASE)
         m_key_mouve_A = false;

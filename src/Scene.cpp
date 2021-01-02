@@ -26,19 +26,14 @@ void Scene::loadScene(){
     }
     m_cle = new Model(m_IniFile.getString("cle.models_directory"));
     m_shader_cle = new Shader(m_IniFile.getString("shader0.shader_directory_vertex").c_str(),m_IniFile.getString("shader0.shader_directory_fragment").c_str());
-
 }
 
-void Scene::renderScene(const glm::mat4 &projection,const  glm::mat4 &view ){
-    for (size_t i= 0; i<m_nbModels; i++){
+void Scene::renderScene(const glm::mat4 &projection, const glm::mat4 &view ){
+     for (size_t i= 0; i<m_nbModels; i++){
         //le .conf indique quel shader utiliser pour chaque model
         int num_shader[m_nbShaders];
             for (size_t j= 0; j < m_nbShaders; j++){
             num_shader[j] = j;
-
-
-
-
 
             // rendu du model charcher à partir des valeurs de transformation données dans les fichier
             glm::mat4 model = glm::mat4(1.0f);
@@ -60,6 +55,9 @@ void Scene::renderScene(const glm::mat4 &projection,const  glm::mat4 &view ){
             m_models[i]->Draw(*m_shaders[j]);
         }
     }
+
+
+
     if(m_afficher_cle) {
         //le .conf indique quel shader utiliser pour chaque model
         m_shader_cle->use();
