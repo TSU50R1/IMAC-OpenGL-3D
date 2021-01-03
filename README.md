@@ -1,13 +1,13 @@
 # IMAC-OpenGL-3D
 
-IMACITY
+Imacity
 ===
 Projet d'OpenGL IMAC 2 par Laurine Capdeville, Léa Rostoker et Daphné Chamot-Rooke
 
-TUTO
+
+Prérequis
 =====
 
-**PREREQUIS**
 
 - cmake
 - SDL, SDL2 (paquets ubuntu libsdl1.2-dev libsdl2-dev)
@@ -17,7 +17,8 @@ TUTO
 - libconfini (voir plus bas)
 
 
-**COMPILATION**
+Compilation
+=====
 
 `IMAC-OpenGL-3D$ mkdir cmake-build-debug`
 
@@ -25,12 +26,16 @@ TUTO
 
 `IMAC-OpenGL-3D/cmake-build-debug$ make`
 
-**EXECUTION** 
+Exécution
+===== 
 
 `IMAC-OpenGL-3D/cmake-build-debug$ cd ./bin`
 
 `IMAC-OpenGL-3D/cmake-build-debug/bin$ ./Imacity`
 
+
+Installation des librairies
+=====
 
 
 **ASSIMP**
