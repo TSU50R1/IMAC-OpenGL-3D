@@ -79,8 +79,8 @@ Pour annuler `git merge --abort`
 Pour pouvoir utiliser la bibliothèque assimp:  
 
 telecharger assimp (version 5.0.1 pour ce projet)  
-`wget https://github.com/assimp/assimp/archive/v5.0.1.tar.gz`
-untar dans `~/assimp`  (`mkdir ~/assimp; cd ~/assimp; wget https://github.com/assimp/assimp/archive/v5.0.1.tar.gz; tar xvzf v5.0.1.tar.gz`)
+
+untar dans `~/assimp`  
 
 Dans `~/assimp/assimp-5.0.1` faire  
 `mkdir build`  
@@ -91,15 +91,11 @@ Dans `~/assimp/assimp-5.0.1` faire
 
 
 **LIBCONFINI**
-Le binaire de la librairie est présent dans l'aborescence. Sous linux, pas besoin de le recompiler.
-Cependant, si vous devez magrès tout recompiler, voici les instruction:
-Dans `lib/confini`:
-`./configure --disable-doc  --disable-examples --includedir=$PWD/../../include --libdir=$PWD --docdir=$PWD/etc`
-`make`
-`make install`
-Et c'est fini
-
-Alternative (pas une bonne idée, il faut faire le ménage dans notre arborescence), pour un installation systeme de libconfini:
+Dans lib/confini:
+./configure --disable-doc  --disable-examples --includedir=$PWD/../../include --libdir=$PWD --docdir=$PWD/etc
+make
+make install
+OLD:
 Pour le parsing de .ini  
 Récupérer le zip ici : https://github.com/madmurphy/libconfini  
 Installer libtool pour pouvoir compiler : `sudo apt-get install libtool-bin`  
@@ -108,5 +104,7 @@ si ça ne marche pas : `./bootstrap` puis `./configure `
 puis : `make`  
 et enfin : `make install-strip` et si ça ne marche pas  `sudo make install-strip`
 
-
+** GLFW **
+sudo apt-get update
+sudo apt-get install libglfw3
 
