@@ -166,16 +166,16 @@ void GamePlay::evemement_entrer_porte(imacity::FreeflyCamera &camera){
     }else {
         for (int i = 0; i < m_nb_scenes; i++) {
             if (m_peut_entrer_scene[i]) {
-                if (possede_cle(i)){
+               // if (possede_cle(i)){
                     if (m_afficher_scene[0]) {
                         if (i == 0)
                             fin_jeu();
                         else
                             changement_scene(i,camera);
                     }
-                }else{
+               // }else{
                           std::cout << "Vous n'avez pas la clé, il faut la chercher !"<< std::endl;
-                }
+               // }
             }
         }
     }

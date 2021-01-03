@@ -8,6 +8,7 @@ CMakeFiles/Imacity.dir/src/Event.cpp.o: ../include/LoadINI.hpp
 CMakeFiles/Imacity.dir/src/Event.cpp.o: ../include/Mesh.hpp
 CMakeFiles/Imacity.dir/src/Event.cpp.o: ../include/Model.hpp
 CMakeFiles/Imacity.dir/src/Event.cpp.o: ../include/Scene.hpp
+CMakeFiles/Imacity.dir/src/Event.cpp.o: ../include/confini.h
 CMakeFiles/Imacity.dir/src/Event.cpp.o: ../include/myShader.hpp
 CMakeFiles/Imacity.dir/src/Event.cpp.o: ../include/stb_image.h
 CMakeFiles/Imacity.dir/src/Event.cpp.o: ../lib/glm/include/glm/common.hpp
@@ -212,6 +213,7 @@ CMakeFiles/Imacity.dir/src/GamePlay.cpp.o: ../include/LoadINI.hpp
 CMakeFiles/Imacity.dir/src/GamePlay.cpp.o: ../include/Mesh.hpp
 CMakeFiles/Imacity.dir/src/GamePlay.cpp.o: ../include/Model.hpp
 CMakeFiles/Imacity.dir/src/GamePlay.cpp.o: ../include/Scene.hpp
+CMakeFiles/Imacity.dir/src/GamePlay.cpp.o: ../include/confini.h
 CMakeFiles/Imacity.dir/src/GamePlay.cpp.o: ../include/myShader.hpp
 CMakeFiles/Imacity.dir/src/GamePlay.cpp.o: ../include/stb_image.h
 CMakeFiles/Imacity.dir/src/GamePlay.cpp.o: ../lib/glm/include/glm/common.hpp
@@ -328,6 +330,7 @@ CMakeFiles/Imacity.dir/src/GamePlay.cpp.o: /home/laurine/assimp/include/assimp/v
 CMakeFiles/Imacity.dir/src/GamePlay.cpp.o: /home/laurine/assimp/include/assimp/vector3.inl
 
 CMakeFiles/Imacity.dir/src/LoadINI.cpp.o: ../include/LoadINI.hpp
+CMakeFiles/Imacity.dir/src/LoadINI.cpp.o: ../include/confini.h
 CMakeFiles/Imacity.dir/src/LoadINI.cpp.o: ../src/LoadINI.cpp
 
 CMakeFiles/Imacity.dir/src/Mesh.cpp.o: ../include/Mesh.hpp
@@ -535,6 +538,7 @@ CMakeFiles/Imacity.dir/src/Scene.cpp.o: ../include/LoadINI.hpp
 CMakeFiles/Imacity.dir/src/Scene.cpp.o: ../include/Mesh.hpp
 CMakeFiles/Imacity.dir/src/Scene.cpp.o: ../include/Model.hpp
 CMakeFiles/Imacity.dir/src/Scene.cpp.o: ../include/Scene.hpp
+CMakeFiles/Imacity.dir/src/Scene.cpp.o: ../include/confini.h
 CMakeFiles/Imacity.dir/src/Scene.cpp.o: ../include/myShader.hpp
 CMakeFiles/Imacity.dir/src/Scene.cpp.o: ../include/stb_image.h
 CMakeFiles/Imacity.dir/src/Scene.cpp.o: ../lib/glm/include/glm/common.hpp
@@ -657,6 +661,7 @@ CMakeFiles/Imacity.dir/src/main.cpp.o: ../include/LoadINI.hpp
 CMakeFiles/Imacity.dir/src/main.cpp.o: ../include/Mesh.hpp
 CMakeFiles/Imacity.dir/src/main.cpp.o: ../include/Model.hpp
 CMakeFiles/Imacity.dir/src/main.cpp.o: ../include/Scene.hpp
+CMakeFiles/Imacity.dir/src/main.cpp.o: ../include/confini.h
 CMakeFiles/Imacity.dir/src/main.cpp.o: ../include/myShader.hpp
 CMakeFiles/Imacity.dir/src/main.cpp.o: ../include/stb_image.h
 CMakeFiles/Imacity.dir/src/main.cpp.o: ../lib/glm/include/glm/common.hpp

@@ -9,6 +9,7 @@ CMakeFiles/Imacity.dir/src/Event.cpp.o
  ../include/Mesh.hpp
  ../include/Model.hpp
  ../include/Scene.hpp
+ ../include/confini.h
  ../include/myShader.hpp
  ../include/stb_image.h
  ../lib/glm/include/glm/common.hpp
@@ -213,6 +214,7 @@ CMakeFiles/Imacity.dir/src/GamePlay.cpp.o
  ../include/Mesh.hpp
  ../include/Model.hpp
  ../include/Scene.hpp
+ ../include/confini.h
  ../include/myShader.hpp
  ../include/stb_image.h
  ../lib/glm/include/glm/common.hpp
@@ -329,6 +331,7 @@ CMakeFiles/Imacity.dir/src/GamePlay.cpp.o
  /home/laurine/assimp/include/assimp/vector3.inl
 CMakeFiles/Imacity.dir/src/LoadINI.cpp.o
  ../include/LoadINI.hpp
+ ../include/confini.h
  /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/LoadINI.cpp
 CMakeFiles/Imacity.dir/src/Mesh.cpp.o
  ../include/Mesh.hpp
@@ -536,6 +539,7 @@ CMakeFiles/Imacity.dir/src/Scene.cpp.o
  ../include/Mesh.hpp
  ../include/Model.hpp
  ../include/Scene.hpp
+ ../include/confini.h
  ../include/myShader.hpp
  ../include/stb_image.h
  ../lib/glm/include/glm/common.hpp
@@ -658,6 +662,7 @@ CMakeFiles/Imacity.dir/src/main.cpp.o
  ../include/Mesh.hpp
  ../include/Model.hpp
  ../include/Scene.hpp
+ ../include/confini.h
  ../include/myShader.hpp
  ../include/stb_image.h
  ../lib/glm/include/glm/common.hpp
