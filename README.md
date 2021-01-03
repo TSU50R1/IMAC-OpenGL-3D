@@ -89,9 +89,13 @@ untar dans `~/assimp` :
 Dans `~/assimp/assimp-5.0.1` faire  
 `mkdir build`  
 `cd build`  
-`cmake .. -G 'Unix Makefiles'`  
+`cmake --prefix=./ .. -G 'Unix Makefiles'`  
 `make`  
 `make DESTDIR=~/assimp install` (met directement au bon endroit normalement)  
+Pour une raison inconnue, l'option --prefix dans cmake n'est pas prise en compte ...
+On fait ca manuellement:
+`cd ~/assimp`
+`mv usr/local/* .`
 
 
 **LIBCONFINI**
