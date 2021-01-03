@@ -137,6 +137,8 @@ bool GamePlay::possede_cle (const int i){
         return m_cles["cle1"];
     if (i == 3)
         return m_cles["cle2"];
+    else 
+        return 0;
 
 }
 //get the key and disable its display in its scene
