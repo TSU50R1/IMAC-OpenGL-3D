@@ -1,0 +1,69 @@
+.TH "IniDispatch" 3 "Mon Oct 26 2020" "libconfini" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IniDispatch \- Dispatch of a single INI node\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <confini\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "const \fBIniFormat\fP \fBformat\fP"
+.br
+.ti -1c
+.RI "uint_least8_t \fBtype\fP"
+.br
+.ti -1c
+.RI "char * \fBdata\fP"
+.br
+.ti -1c
+.RI "char * \fBvalue\fP"
+.br
+.ti -1c
+.RI "const char * \fBappend_to\fP"
+.br
+.ti -1c
+.RI "size_t \fBd_len\fP"
+.br
+.ti -1c
+.RI "size_t \fBv_len\fP"
+.br
+.ti -1c
+.RI "size_t \fBat_len\fP"
+.br
+.ti -1c
+.RI "size_t \fBdispatch_id\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Dispatch of a single INI node\&. 
+.SH "Field Documentation"
+.PP 
+.SS "IniDispatch::append_to"
+The current section path; it cannot be \fCNULL\fP 
+.SS "IniDispatch::at_len"
+The length of the string \fBIniDispatch::append_to\fP 
+.SS "IniDispatch::d_len"
+The length of the string \fBIniDispatch::data\fP 
+.SS "IniDispatch::data"
+It can contain a comment, a section path or a key name, depending on \fBIniDispatch::type\fP; it cannot be \fCNULL\fP 
+.SS "IniDispatch::dispatch_id"
+The dispatch number (the first dispatch is number zero) 
+.SS "IniDispatch::format"
+The format of the INI file (see \fBIniFormat\fP) 
+.SS "IniDispatch::type"
+The dispatch type (see \fCenum\fP \fBIniNodeType\fP) 
+.SS "IniDispatch::v_len"
+The length of the string \fBIniDispatch::value\fP 
+.SS "IniDispatch::value"
+It can contain the value of a key element, an empty string or it can point to the address pointed by the global variable \fBINI_GLOBAL_IMPLICIT_VALUE\fP (\fIthe latter is the only case in which \fC\fBIniDispatch::value\fP\fP can be \fCNULL\fP\fP) 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libconfini from the source code\&.

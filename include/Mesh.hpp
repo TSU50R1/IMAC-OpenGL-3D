@@ -38,7 +38,7 @@ public:
          std::vector<Texture> textures);
 
     // render the mesh
-    void Draw(Shader &shader);
+    void Draw(imacity::Shader &shader);
 
 private:
     // render data

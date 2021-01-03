@@ -64,6 +64,7 @@ Pour annuler `git merge --abort`
 
 **COMPILATION**
 
+`IMAC-OpenGL-3D$ mkdir cmake-build-debug`
 
 `IMAC-OpenGL-3D/cmake-build-debug$ cmake ..`
 
@@ -110,7 +111,11 @@ On fait ca manuellement:
 
 
 **LIBCONFINI**
-
+Dans lib/confini:
+./configure --disable-doc  --disable-examples --includedir=$PWD/../../include --libdir=$PWD --docdir=$PWD/etc
+make
+make install
+OLD:
 Pour le parsing de .ini  
 
 Les binaires sont dans l'arobrescence et si vous êtes sous linux, il n'y normalement a rien à faire de plus.
@@ -130,4 +135,7 @@ puis : `make`
 et enfin : `make install-strip` et si ça ne marche pas  `sudo make install-strip`
 
 
+**GLFW**
+`sudo apt-get update`      
+`sudo apt-get install libglfw3`
 
