@@ -6,8 +6,8 @@
 
 ////CONSTRUCTOR/DESCTRUCTOR-----------------------------------------------------------
 GamePlay::GamePlay() :m_peut_ramasser(false),
-                        m_nb_scenes(4),
-                        m_check_scene_limite(true){
+                      m_nb_scenes(4),
+                      m_check_scene_limite(true){
     //files and booleans initialization
     for(size_t i = 0; i< m_nb_scenes; i++){
         m_scenes.push_back(new Scene("ini_files/Scene"+std::to_string(i+1)+".conf"));
@@ -26,7 +26,6 @@ GamePlay::GamePlay() :m_peut_ramasser(false),
     m_File_Description_Zones.mapPath("ini_files/Description_zones.conf");
     m_nb_zones_portes = std::stoi(m_File_Description_Zones.getString("global.m_nb_zones_portes"));
 }
-
 GamePlay::~GamePlay(){};
 ////END---------CONSTRUCTOR/DESCTRUCTOR-------------------------------------
 
@@ -40,7 +39,6 @@ bool GamePlay::est_dans_zone(const imacity::FreeflyCamera &camera, float x_zone,
         return false;
     }
 }
-
 //runs through all the possible door zones described in the .conf and activates the possibility of entering
 void GamePlay::verifie_zones_portes(const imacity::FreeflyCamera &camera){
     for (size_t i = 0; i< m_nb_zones_portes; i++){
@@ -52,7 +50,6 @@ void GamePlay::verifie_zones_portes(const imacity::FreeflyCamera &camera){
         }
     }
 }
-
 //for scenes in the houses, allows you to keep the camera in the room
 //the values of the different zones are stored in the file Description_zones.conf
 void GamePlay::est_dans_scene(imacity::FreeflyCamera &camera, const int i){
@@ -72,14 +69,12 @@ void GamePlay::est_dans_scene(imacity::FreeflyCamera &camera, const int i){
         camera.set_Position(camera.get_Position().x-pas_recul*(camera.get_Position().x-x_zone),0.0,camera.get_Position().z- pas_recul*(camera.get_Position().z-z_zone));
     }
 }
-
 void GamePlay::reste_dans_scene(imacity::FreeflyCamera &camera){
     for(int i = 1; i<m_nb_scenes; i++){
         if (m_afficher_scene[i])
             est_dans_scene(camera, i);
     }
 }
-
 void GamePlay::verifie_zone_cle(const imacity::FreeflyCamera &camera){
     m_peut_ramasser = false;
     if (est_dans_zone(camera, std::stof(m_File_Description_Zones.getString("zone_cle1.x")),
@@ -88,7 +83,6 @@ void GamePlay::verifie_zone_cle(const imacity::FreeflyCamera &camera){
         m_peut_ramasser = true;
     }
 }
-
 void GamePlay::verifications_zones(imacity::FreeflyCamera &camera){
     verifie_zones_portes(camera);
     verifie_zone_cle(camera);
@@ -105,14 +99,12 @@ void GamePlay::drawScene(const glm::mat4 &projection, const glm::mat4 &view ){
     }
 
 }
-
 //scene loading
 void GamePlay::loadScenes (){
     for (size_t i = 0; i<m_nb_scenes; i++){
         m_scenes[i] -> loadScene();
     }
 }
-
 //allows scene change
 void GamePlay::changement_scene(const int numero_scene, imacity::FreeflyCamera &camera){
     assert (numero_scene <m_nb_scenes && numero_scene >=0 && "Numero de scene incorrect");
@@ -124,7 +116,7 @@ void GamePlay::changement_scene(const int numero_scene, imacity::FreeflyCamera &
     this->set_camera_new_scene(camera, numero_scene);
     m_check_scene_limite = true;
 }
-
+//when we change scenes, the camera has to be at the right place
 void GamePlay::set_camera_new_scene(imacity::FreeflyCamera &camera,const int i){
     assert (i <m_nb_scenes && i >=0 && "Numero de scene incorrect");
     camera.set_Position(std::stof(m_File_Description_Zones.getString("zone_scene" +  std::to_string(i) + ".x")),
@@ -147,7 +139,6 @@ bool GamePlay::possede_cle (const int i){
         return m_cles["cle2"];
 
 }
-
 //get the key and disable its display in its scene
 void GamePlay::recupere_cle(const int i){
     m_cles["cle"+std::to_string(i)] = true;
@@ -167,7 +158,6 @@ void GamePlay::evenement_ramassage_de_cle(){
             recupere_cle(i);
     }
 }
-
 void GamePlay::evemement_entrer_porte(imacity::FreeflyCamera &camera){
     if (m_afficher_scene[1] ||
         m_afficher_scene[2] ||
