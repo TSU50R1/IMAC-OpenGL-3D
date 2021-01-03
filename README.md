@@ -104,7 +104,8 @@ si ça ne marche pas : `./bootstrap` puis `./configure `
 puis : `make`  
 et enfin : `make install-strip` et si ça ne marche pas  `sudo make install-strip`
 
-** GLFW **
-sudo apt-get update
-sudo apt-get install libglfw3
+
+**GLFW**
+`sudo apt-get update`      
+`sudo apt-get install libglfw3`
 
