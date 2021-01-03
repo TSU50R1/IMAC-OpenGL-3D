@@ -79,8 +79,8 @@ Pour annuler `git merge --abort`
 Pour pouvoir utiliser la bibliothèque assimp:  
 
 telecharger assimp (version 5.0.1 pour ce projet)  
-
-untar dans `~/assimp`  
+`wget https://github.com/assimp/assimp/archive/v5.0.1.tar.gz`
+untar dans `~/assimp`  (`mkdir ~/assimp; cd ~/assimp; wget https://github.com/assimp/assimp/archive/v5.0.1.tar.gz; tar xvzf v5.0.1.tar.gz`)
 
 Dans `~/assimp/assimp-5.0.1` faire  
 `mkdir build`  
@@ -91,11 +91,15 @@ Dans `~/assimp/assimp-5.0.1` faire
 
 
 **LIBCONFINI**
-Dans lib/confini:
-./configure --disable-doc  --disable-examples --includedir=$PWD/../../include --libdir=$PWD --docdir=$PWD/etc
-make
-make install
-OLD:
+Le binaire de la librairie est présent dans l'aborescence. Sous linux, pas besoin de le recompiler.
+Cependant, si vous devez magrès tout recompiler, voici les instruction:
+Dans `lib/confini`:
+`./configure --disable-doc  --disable-examples --includedir=$PWD/../../include --libdir=$PWD --docdir=$PWD/etc`
+`make`
+`make install`
+Et c'est fini
+
+Alternative (pas une bonne idée, il faut faire le ménage dans notre arborescence), pour un installation systeme de libconfini:
 Pour le parsing de .ini  
 Récupérer le zip ici : https://github.com/madmurphy/libconfini  
 Installer libtool pour pouvoir compiler : `sudo apt-get install libtool-bin`  
