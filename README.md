@@ -22,6 +22,8 @@ Compilation
 
 `IMAC-OpenGL-3D$ mkdir cmake-build-debug`
 
+`IMAC-OpenGL-3D$ cd cmake-build-debug`
+
 `IMAC-OpenGL-3D/cmake-build-debug$ cmake ..`
 
 `IMAC-OpenGL-3D/cmake-build-debug$ make`
@@ -61,7 +63,7 @@ Dans `~/assimp/assimp-5.0.1` faire
 
 `make`  
 
-`make DESTDIR=~/assimp install` (met directement au bon endroit normalement)  
+`make DESTDIR=~/assimp install`  
 
 Pour une raison inconnue, l'option --prefix dans cmake n'est pas prise en compte ...
 On fait ça manuellement :
