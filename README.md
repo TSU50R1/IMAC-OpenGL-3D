@@ -64,6 +64,8 @@ Pour annuler `git merge --abort`
 
 **COMPILATION**
 
+`IMAC-OpenGL-3D$ mkdir cmake-build-debug`
+
 `IMAC-OpenGL-3D/cmake-build-debug$ cmake ..`
 
 `IMAC-OpenGL-3D/cmake-build-debug$ make`
@@ -105,4 +107,7 @@ puis : `make`
 et enfin : `make install-strip` et si ça ne marche pas  `sudo make install-strip`
 
 
+**GLFW**
+`sudo apt-get update`      
+`sudo apt-get install libglfw3`
 
