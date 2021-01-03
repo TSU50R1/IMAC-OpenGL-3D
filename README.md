@@ -69,6 +69,8 @@ Pour annuler `git merge --abort`
 
 `IMAC-OpenGL-3D/cmake-build-debug$ make`
 
+**EXECUTION** 
+
 `IMAC-OpenGL-3D/cmake-build-debug$ cd ./bin`
 
 `IMAC-OpenGL-3D/cmake-build-debug/bin$ ./Imacity`
@@ -80,28 +82,39 @@ Pour annuler `git merge --abort`
 Pour pouvoir utiliser la bibliothèque assimp:  
 créer un repertoire assimp:
 `mkdir ~/assimp`
+
 telecharger assimp (version 5.0.1 pour ce projet):
+
 `cd ~/assimp`
+
 `wget https://github.com/assimp/assimp/archive/v5.0.1.tar.gz`
+
 untar dans `~/assimp` :
+
 `tar xvzf v5.0.1.tar.gz`
 
 Dans `~/assimp/assimp-5.0.1` faire  
+
 `mkdir build`  
 `cd build`  
 `cmake --prefix=./ .. -G 'Unix Makefiles'`  
 `make`  
 `make DESTDIR=~/assimp install` (met directement au bon endroit normalement)  
+
 Pour une raison inconnue, l'option --prefix dans cmake n'est pas prise en compte ...
 On fait ca manuellement:
+
 `cd ~/assimp`
+
 `mv usr/local/* .`
 
 
 **LIBCONFINI**
 
 Pour le parsing de .ini  
+
 Les binaires sont dans l'arobrescence et si vous êtes sous linux, il n'y normalement a rien à faire de plus.
+
 Si vous devez malgrès tout recompiler:
 dans `lib/confini`:
 `./configure --libdir=$PWD/.. -includedir=$PWD/../../include --docdir=$PWD/tmp --disable-doc --disable-examples`
