@@ -72,7 +72,6 @@ int main(){
     // build and compile shaders
     // -------------------------
 
-    imacity::Shader modelShader("shaders/modelLoading.vs.glsl", "shaders/modelLoading.fs.glsl");
     imacity::Shader lightingShader("shaders/lightning.vs.glsl", "shaders/lightning.fs.glsl");
 
     lightingShader.use();
@@ -107,10 +106,10 @@ int main(){
 
         // positions of the point lights
         glm::vec3 pointLightPositions[] = {
-            glm::vec3( 0.7f,  0.2f,  2.0f),
-            glm::vec3( 2.3f, -3.3f, -4.0f),
-            glm::vec3(-4.0f,  2.0f, -12.0f),
-            glm::vec3( 0.0f,  0.0f, -3.0f)
+            glm::vec3( 1.9f,  -0.8f,  -3.0f),
+            glm::vec3( 1.4f, -0.2f, -58.4f),
+            glm::vec3(1.4f,  -0.3f, -61.0f),
+            glm::vec3( 1.7f,  -0.3f, -61.2f)
         };
 
         //modelShader.use();
@@ -171,10 +170,6 @@ int main(){
 
         glm::mat4 projection = glm::perspective(glm::radians(70.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
         glm::mat4 view = camera.getViewMatrix();
-
-
-        modelShader.setMat4("projection", projection);
-        modelShader.setMat4("view", view);
 
         lightingShader.setMat4("projection", projection);
         lightingShader.setMat4("view", view);
