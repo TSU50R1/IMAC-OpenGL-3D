@@ -10,11 +10,11 @@ TUTO
 **PREREQUIS**
 
 - cmake
-- SDL, SDL2
-- ASSIMP
-- GLEW
-- GLFW3
-- libconfini
+- SDL, SDL2 (paquets ubuntu libsdl1.2-dev libsdl2-dev)
+- ASSIMP (voir plus bas)
+- GLEW (paquets libglew-dev libglew glew-utils)
+- GLFW3 (paquets libglfw3 libglfw3-dev libglfw3-doc)
+- libconfini (voir plus bas)
 
 **GIT**
 
