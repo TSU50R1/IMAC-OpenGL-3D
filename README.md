@@ -78,10 +78,13 @@ Pour annuler `git merge --abort`
 **ASSIMP**
 
 Pour pouvoir utiliser la bibliothèque assimp:  
-
-telecharger assimp (version 5.0.1 pour ce projet)  
-
-untar dans `~/assimp`  
+créer un repertoire assimp:
+`mkdir ~/assimp`
+telecharger assimp (version 5.0.1 pour ce projet):
+`cd ~/assimp`
+`wget https://github.com/assimp/assimp/archive/v5.0.1.tar.gz`
+untar dans `~/assimp` :
+`tar xvzf v5.0.1.tar.gz`
 
 Dans `~/assimp/assimp-5.0.1` faire  
 `mkdir build`  
