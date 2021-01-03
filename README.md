@@ -94,6 +94,14 @@ Dans `~/assimp/assimp-5.0.1` faire
 **LIBCONFINI**
 
 Pour le parsing de .ini  
+Les binaires sont dans l'arobrescence et si vous êtes sous linux, il n'y normalement a rien à faire de plus.
+Si vous devez malgrès tout recompiler:
+dans `lib/confini`:
+`./configure --libdir=$PWD/.. -includedir=$PWD/../../include --docdir=$PWD/tmp --disable-doc --disable-examples`
+`make`
+`make install`
+
+Pour une installation système (pas une bonne idée: il faudrait faire le ménage de libconfini dans notre arborescence d'abord):
 Récupérer le zip ici : https://github.com/madmurphy/libconfini  
 Installer libtool pour pouvoir compiler : `sudo apt-get install libtool-bin`  
 faire : `./configure   `  
