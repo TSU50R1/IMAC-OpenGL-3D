@@ -1,3 +1,0 @@
-/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/test/CMakeFiles/rebuild_cache.dir
-/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/test/CMakeFiles/Imacity.dir
-/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/test/CMakeFiles/edit_cache.dir
