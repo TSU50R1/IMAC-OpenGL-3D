@@ -21,8 +21,7 @@ namespace imacity {
         glm::vec3 m_FrontVector;
 
         void set_Position (const float &x, const float &y, const float &z);
-        glm::vec3 get_Position  () const;
-
+        
         glm::vec3 get_Position() const;
 
         FreeflyCamera() :

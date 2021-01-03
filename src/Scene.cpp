@@ -30,9 +30,9 @@ void Scene::renderScene(const glm::mat4 &projection, const glm::mat4 &view ){
     //The .conf indicates which shader to use for each model.
     int num_shader = std::stoi(m_IniFile.getString("model" + std::to_string(i) +".num_shader"));
         for (size_t j= 0; j < m_nbShaders; j++) {
-            m_shaders[j]->use();
-            m_shaders[j]->setMat4("projection", projection);
-            m_shaders[j]->setMat4("view", view);
+            //m_shaders[j]->use();
+            //m_shaders[j]->setMat4("projection", projection);
+            //m_shaders[j]->setMat4("view", view);
             m_shaders[j]->setMat4("model", rendering("model" + std::to_string(i), projection, view));
             m_models[i]->Draw(*m_shaders[j]);
         } 
