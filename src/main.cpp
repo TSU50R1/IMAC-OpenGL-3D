@@ -80,18 +80,6 @@ int main(){
     // -----------------------------
     glEnable(GL_DEPTH_TEST);
 
-    // build and compile shaders
-    // -------------------------
-
-    Shader modelShader("shaders/modelLoading.vs.glsl", "shaders/modelLoading.fs.glsl");
-    Shader lightingShader("shaders/lightning.vs.glsl", "shaders/lightning.fs.glsl");
-
-    lightingShader.use();
-
-    lightingShader.setInt("material.diffuse", 0);
-    lightingShader.setInt("material.specular", 1);
-
-
     // render loop
     // -----------
     static const float speed = 1;
@@ -131,36 +119,16 @@ int main(){
         };
 
         //modelShader.use();
-        lightingShader.use();
+        /*lightingShader.use();
         lightingShader.setInt("material.diffuse", 0.2);
         lightingShader.setInt("material.specular", 1.);
-
-
+        
         /// directional light
         lightingShader.setVec3("dirLight.direction", 0.5f, -0.5f, -0.5f);
         lightingShader.setVec3("dirLight.ambient", (float)sin(0.1*glfwGetTime())*glm::vec3(0.7f, 0.2f, 0.5f));
         lightingShader.setVec3("dirLight.diffuse", 0.7f, 0.4f, 0.4f);
         lightingShader.setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
-        // point light 1
-        /*lightingShader->setVec3("pointLights[0].position", glm::vec3(std::stof(m_IniFile.getString("light.position_x")),
-                                                                    std::stof(m_IniFile.getString("light.position_y")),
-                                                                    std::stof(m_IniFile.getString("light.position_z"))
-                                ));
-        lightingShader->setVec3("pointLights[0].ambient", glm::vec3(std::stof(m_IniFile.getString("light.ambient_r")),
-                                                                    std::stof(m_IniFile.getString("light.ambient_g")),
-                                                                    std::stof(m_IniFile.getString("light.ambient_b"))
-                                ));
-        lightingShader->setVec3("pointLights[0].diffuse", glm::vec3(std::stof(m_IniFile.getString("light.diffuse_r")),
-                                                                    std::stof(m_IniFile.getString("light.diffuse_g")),
-                                                                    std::stof(m_IniFile.getString("light.diffuse_b"))
-                                ));
-        lightingShader->setVec3("pointLights[0].specular", glm::vec3(std::stof(m_IniFile.getString("light.specular_r")),
-                                                                    std::stof(m_IniFile.getString("light.specular_g")),
-                                                                    std::stof(m_IniFile.getString("light.specular_b"))
-                                ));
-        lightingShader->setFloat("pointLights[0].constant", std::stof(m_IniFile.getString("light.constant")));
-        lightingShader->setFloat("pointLights[0].linear", std::stof(m_IniFile.getString("light.linear")));
-        lightingShader->setFloat("pointLights[0].quadratic", std::stof(m_IniFile.getString("light.quadratic")));*/
+        
         // point light 1
         lightingShader.setVec3("pointLights[0].position", pointLightPositions[0]);
         lightingShader.setVec3("pointLights[0].ambient", 0.05f, 0.05f, 0.05f);
@@ -203,19 +171,13 @@ int main(){
         lightingShader.setFloat("spotLight.quadratic", 0.032);
         lightingShader.setFloat("spotLight.cutOff", glm::cos(glm::radians(12.5f)));
         lightingShader.setFloat("spotLight.outerCutOff", glm::cos(glm::radians(15.0f)));  
-        
+        */
 
 
         glm::mat4 projection = glm::perspective(glm::radians(70.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
         glm::mat4 view = camera.getViewMatrix();
         glm::mat4 model = glm::mat4(1.);
 
-
-        modelShader.setMat4("projection", projection);
-        modelShader.setMat4("view", view);
-
-        lightingShader.setMat4("projection", projection);
-        lightingShader.setMat4("view", view);
 
         Game.drawScene(projection, view);
 

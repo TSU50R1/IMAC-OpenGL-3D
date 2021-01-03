@@ -49,7 +49,7 @@ bool GamePlay::est_dans_zone(const FreeflyCamera &camera, float x_zone, float z_
 void GamePlay::drawScene(const glm::mat4 &projection, const glm::mat4 &view ){
 
     for (size_t i = 0; i<m_nb_scenes; i++){
-        if (m_afficher_scene[i])
+        //if (m_afficher_scene[i])
             m_scenes[i]->renderScene(projection, view);
     }
 

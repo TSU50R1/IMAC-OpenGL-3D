@@ -9,11 +9,13 @@ class Scene {
 public:
     size_t m_nbModels;
     size_t m_nbShaders;
+    size_t m_nbPointLights;
     IniLoadMap m_IniFile;
     std::vector<Model*> m_models;
     std::vector<Shader*> m_shaders;
     Model* m_cle;
     Shader* m_shader_cle;
+    Shader* m_shader_light;
     bool m_afficher_cle;
 
 public:
