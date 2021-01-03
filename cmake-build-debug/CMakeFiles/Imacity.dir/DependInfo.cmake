@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/Camera.cpp" "/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/CMakeFiles/Imacity.dir/src/Camera.cpp.o"
   "/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/Event.cpp" "/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/CMakeFiles/Imacity.dir/src/Event.cpp.o"
   "/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/FreeflyCamera.cpp" "/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.o"
   "/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/src/GamePlay.cpp" "/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/CMakeFiles/Imacity.dir/src/GamePlay.cpp.o"

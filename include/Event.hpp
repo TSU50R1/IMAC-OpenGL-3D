@@ -21,6 +21,8 @@ private:
 public:
     Event();
     ~Event();
-    void processInput(GLFWwindow *window, FreeflyCamera &camera, GamePlay &game);
-    void mouse_callback(GLFWwindow* window, FreeflyCamera &camera, double xpos, double ypos);
+    void processInput(GLFWwindow *window, imacity::FreeflyCamera &camera, GamePlay &game);
+    void deplacement(GLFWwindow *window, imacity::FreeflyCamera &camera, GamePlay &game);
+    void interaction(GLFWwindow *window, imacity::FreeflyCamera &camera, GamePlay &game);
+    void releve_touche(GLFWwindow *window);
 };

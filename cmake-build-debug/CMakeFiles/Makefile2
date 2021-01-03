@@ -93,12 +93,12 @@ clean: CMakeFiles/Imacity.dir/clean
 CMakeFiles/Imacity.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Imacity.dir/build.make CMakeFiles/Imacity.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target Imacity"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target Imacity"
 .PHONY : CMakeFiles/Imacity.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Imacity.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Imacity.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Imacity.dir/rule

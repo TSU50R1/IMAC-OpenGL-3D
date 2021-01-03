@@ -19,7 +19,6 @@
 class GamePlay {
 private:
     int m_nb_scenes;
-    bool m_check_zone;
     bool m_check_scene_limite;
 
     std::vector <bool> m_afficher_scene;
@@ -30,32 +29,34 @@ private:
 
     IniLoadMap m_File_Description_Zones;
     size_t m_nb_zones_portes;
+    std::map <std::string, bool> m_cles;
+
+    //check zones
+    void est_dans_scene(imacity::FreeflyCamera &camera, const int i);
+    bool est_dans_zone(const imacity::FreeflyCamera &camera, float x_zone, float z_zone,  float R);
+    void verifie_zone_cle(const imacity::FreeflyCamera &camera);
+    void verifie_zones_portes(const imacity::FreeflyCamera &camera);
 
 public:
-    std::map <std::string, bool> m_cles;
+
     GamePlay();
-
     ~GamePlay();
-
-    bool est_dans_zone(const FreeflyCamera &camera, float x_zone, float z_zone,  float R);
-    void drawScene(const glm::mat4 &projection, const glm::mat4 &view );
+    //scene handling
     void loadScenes ();
+    void drawScene(const glm::mat4 &projection, const glm::mat4 &view );
+    void changement_scene(const int numero_scene,imacity::FreeflyCamera &camera);
+    void set_camera_new_scene(imacity::FreeflyCamera &camera,const int i);
+    void reste_dans_scene(imacity::FreeflyCamera &camera);
+    void verifications_zones(imacity::FreeflyCamera &camera);
+    //keys handling
     bool possede_cle (const int i);
-    void verifie_zones_portes(const FreeflyCamera &camera);
-    void changement_scene(const int numero_scene,FreeflyCamera &camera);
     void recupere_cle(const int i);
+    //event handling
+    void evenement_ramassage_de_cle();
+    void evemement_entrer_porte(imacity::FreeflyCamera &camera);
+    //end if game
     void fin_jeu();
-    void verifie_zone_cle(const FreeflyCamera &camera);
-    void reste_dans_scene(FreeflyCamera &camera);
-    void est_dans_scene(FreeflyCamera &camera, const int i);
-    void set_camera_new_scene(FreeflyCamera &camera,const int i);
 
 
-    inline bool get_bool_scene(const int i) const {return m_afficher_scene[i];}
-    inline void set_bool_scene(const bool afficher, const int i){ m_afficher_scene[i] = afficher;}
-    inline bool get_bool_peut_entrer(const int i) const {return m_peut_entrer_scene[i];}
-    inline int get_nb_scene() const {return m_nb_scenes;}
-    inline bool get_bool_peut_ramasser(){return m_peut_ramasser;}
     inline bool get_check_scene_limite(){return m_check_scene_limite;}
-
 };

@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Imacity.dir/src/Camera.cpp.o"
   "CMakeFiles/Imacity.dir/src/Event.cpp.o"
   "CMakeFiles/Imacity.dir/src/FreeflyCamera.cpp.o"
   "CMakeFiles/Imacity.dir/src/GamePlay.cpp.o"
