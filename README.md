@@ -64,6 +64,8 @@ Pour annuler `git merge --abort`
 
 **COMPILATION**
 
+`IMAC-OpenGL-3D$ mkdir cmake-build-debug`
+
 `IMAC-OpenGL-3D/cmake-build-debug$ cmake ..`
 
 `IMAC-OpenGL-3D/cmake-build-debug$ make`
