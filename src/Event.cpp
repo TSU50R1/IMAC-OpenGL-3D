@@ -1,10 +1,10 @@
 #include "Event.hpp"
 #include <iostream>
 
-Event::Event() :m_key_mouve_A(false),
-                m_key_mouve_D (false),
-                m_key_mouve_S(false),
-                m_key_mouve_W(false),
+Event::Event() :m_key_move_A(false),
+                m_key_move_D (false),
+                m_key_move_S(false),
+                m_key_move_W(false),
                 m_canMove(true),
                 m_canGet(true),
                 m_speed(0.2){};
@@ -29,34 +29,34 @@ void Event::releve_touche(GLFWwindow *window){
     if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_RELEASE)
         m_canGet = true;
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_RELEASE)
-        m_key_mouve_A = false;
+        m_key_move_A = false;
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_RELEASE)
-        m_key_mouve_W = false;
+        m_key_move_W = false;
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_RELEASE)
-        m_key_mouve_D = false;
+        m_key_move_D = false;
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_RELEASE)
-        m_key_mouve_S = false;
+        m_key_move_S = false;
 }
 
 void Event::deplacement(GLFWwindow *window, imacity::FreeflyCamera &camera, GamePlay &game){
     if (game.get_check_scene_limite()) { //the movement in each scene can only be done within a certain radius
         if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-            m_key_mouve_W = true;
+            m_key_move_W = true;
         if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-            m_key_mouve_S = true;
+            m_key_move_S = true;
         if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-            m_key_mouve_A = true;
+            m_key_move_A = true;
         if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-            m_key_mouve_D = true;
+            m_key_move_D = true;
 
         //the use of a boolean prevents a new input as long as the key is not pressed
-        if (m_key_mouve_W)
+        if (m_key_move_W)
             camera.moveFront(m_speed);
-        if (m_key_mouve_D)
+        if (m_key_move_D)
             camera.moveLeft(-m_speed / 60);
-        if (m_key_mouve_A)
+        if (m_key_move_A)
             camera.moveLeft(m_speed / 60);
-        if (m_key_mouve_S)
+        if (m_key_move_S)
             camera.moveFront(-m_speed);
     }
 }

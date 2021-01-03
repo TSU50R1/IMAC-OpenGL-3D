@@ -10,10 +10,10 @@ class Event {
 private:
     int m_id;
     const float m_speed;
-    bool m_key_mouve_S;
-    bool m_key_mouve_A;
-    bool m_key_mouve_W;
-    bool m_key_mouve_D;
+    bool m_key_move_S;
+    bool m_key_move_A;
+    bool m_key_move_W;
+    bool m_key_move_D;
     bool m_canMove;
     bool m_canGet;
 

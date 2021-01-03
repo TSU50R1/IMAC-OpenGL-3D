@@ -1,68 +1,124 @@
-<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>195</x><y>10</y><w>210</w><h>70</h></coordinates><panel_attributes>Class : Camera
---
-Event *event
-
-move()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>195</x><y>500</y><w>210</w><h>200</h></coordinates><panel_attributes>Class : Item
---
-key
-bag 
-book
-
-Model *model
-Int id
-Event *event
-
-display()
-take()
-use()
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>195</x><y>90</y><w>210</w><h>190</h></coordinates><panel_attributes>Class : Scene
---
-first
-second
-third
-
-Texture *texture
-Int id
-Light *light
-Landscape *landcape
-
-display()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>455</x><y>490</y><w>210</w><h>80</h></coordinates><panel_attributes>Class : Texture
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>634</x><y>42</y><w>210</w><h>300</h></coordinates><panel_attributes>Class : FreeflyCamera
 --
 
+        float Phi
+        float Theta
+        vec3 LeftVector
+        vec3 UpVector
+        vec3 FrontVector
+        vec3 Position
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>195</x><y>290</y><w>210</w><h>190</h></coordinates><panel_attributes>Class : Landscape
---
-house
-castle
-bushes
-portal
-
-Model *model
-Int id
-
-display()
-enter()
-
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>455</x><y>20</y><w>210</w><h>120</h></coordinates><panel_attributes>Class : Event
---
-click
-key 
-
-
-
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>455</x><y>280</y><w>210</w><h>80</h></coordinates><panel_attributes>Class : Mesh
---
-assimp
-
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>455</x><y>160</y><w>210</w><h>100</h></coordinates><panel_attributes>Class : Light
 --
 
-display()
-
-
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>455</x><y>390</y><w>210</w><h>80</h></coordinates><panel_attributes>Class : Model
+        computeDirectionVectors()
+        set_Position ()
+        get_Position()
+        moveLeft()
+        moveFront()
+        rotateLeft()
+        rotateUp()
+        getViewMatrix()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>84</x><y>12</y><w>220</w><h>390</h></coordinates><panel_attributes>Class : GamePlay
 --
-assimp
-Mesh *mesh
 
-</panel_attributes><additional_attributes></additional_attributes></element></diagram>
+    int nb_scenes
+    bool check_scene_limite
+    vector &lt;bool&gt; afficher_scene
+    vector &lt;bool&gt; peut_entrer_scene
+    bool peut_ramasser
+    vector &lt;Scene*&gt; scenes
+    IniLoadMap File_Description_Zones
+    size_t nb_zones_portes
+    map &lt;std::string, bool&gt; cles
+
+--
+
+    verifie_zone_cle()
+    verifie_zones_portes()
+    loadScenes ()
+    drawScene()
+    changement_scene();
+    verifications_zones()
+    bool possede_cle ()
+    recupere_cle()
+    evenement_ramassage_de_cle();
+    evemement_entrer_porte()
+    fin_jeu()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>644</x><y>382</y><w>190</w><h>220</h></coordinates><panel_attributes>Class : Event
+--
+
+    int id
+    float speed
+    bool key_move
+    bool canMove
+    bool canGet
+
+--
+
+    processInput()
+    deplacement()
+    interaction()
+    releve_touche()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>384</x><y>372</y><w>210</w><h>110</h></coordinates><panel_attributes>Class : myShader
+--
+
+    use()
+    setX()
+    checkCompileErrors()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>84</x><y>652</y><w>210</w><h>70</h></coordinates><panel_attributes>LoadINI
+--
+
+de la librairie confini
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>384</x><y>82</y><w>210</w><h>270</h></coordinates><panel_attributes>Class : Scene
+--
+
+    nbModels
+    nbShaders
+    IniFile
+    models
+    shaders
+    cle
+    shader_cle
+    afficher_cle
+
+--
+
+    loadScene()
+    renderScene()
+    rendering()
+    set_afficher_cle()
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>384</x><y>512</y><w>210</w><h>220</h></coordinates><panel_attributes>Class : Mesh
+--
+
+    vertices
+    indices
+    textures
+    VAO
+    VBO
+    EBO
+
+--
+
+    Draw()
+    setupMesh()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>84</x><y>422</y><w>210</w><h>220</h></coordinates><panel_attributes>Class : Model
+--
+
+    textures_loaded
+    meshes
+    directory
+    gammaCorrection
+
+--
+
+    Draw()
+    loadModel()
+    processNode()
+    processMesh()
+    loadMaterialTextures()
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>600</y><w>120</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>420</y><w>110</w><h>300</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>90;10;40;80;40;230;10;280</additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>330</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>300</y><w>110</w><h>180</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>90;10;10;160</additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>110</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>340</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;30</additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>50</y><w>350</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;330;10</additional_attributes></element></diagram>
