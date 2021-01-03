@@ -1,0 +1,121 @@
+/*
+
+	Doxygen Pages Index
+	===================
+
+*/
+
+/**
+
+
+
+\page		baremetal	Compiling without I/O
+
+\brief		What `./configure --without-io-api` does
+
+
+
+\page		deprecated	Deprecated List
+
+\brief		List of deprecated functions and variables
+
+
+
+\page		fnoverview	Function Overview
+
+\brief		Complete list of functions
+
+Here follows the list of public functions available with **libconfini**. Almost
+each of them is independent, therefore if you are compiling the library you may
+decide to remove the functions listed below from the code according to your
+needs, with the only exceptions of `ini_string_match_ii()`, required by
+`ini_array_match()` (you could still remove both though), and
+`strip_ini_cache()`, required by both `load_ini_file()` and `load_ini_path()`
+(you could remove these three functions altogether as well, but you would make
+the library virtually useless).
+
+
+
+\page		develop		Get involved
+
+\brief		Developing **libconfini**
+
+
+
+\page		install		INSTALL
+
+\brief		How to install and use **libconfini** on different platforms
+
+
+
+\page		libconfini	Library Functions Manual
+
+\brief		User Guide for **libconfini**
+
+\copyright	GPL license version 3 or any later version
+
+
+
+\page		rationale	Rationale
+
+\brief		Why **libconfini**?
+
+
+
+\page		readme		README
+
+\brief		Yet another INI parser
+
+
+
+\file		README.md
+
+This file provides the markdown source code for the \ref readme.
+
+
+
+\file		MANUAL.md
+
+This file provides the markdown source code for the \ref libconfini.
+
+
+
+\file		dev/docs/baremetal.md
+
+This file provides the markdown source code for the page \ref baremetal.
+
+
+
+\file		dev/docs/develop.md
+
+This file provides the markdown source code for the page \ref develop.
+
+
+
+\file		dev/docs/install.md
+
+This file provides the markdown source code for the page \ref install.
+
+
+
+\file		dev/docs/mainpage.md
+
+This file provides the markdown source code for the main page.
+
+
+
+\file		dev/docs/rationale.md
+
+This file provides the markdown source code for the \ref rationale.
+
+
+
+\file		autostuff/doxygen/dpi.dox
+
+This file is used by Doxygen to indicize the pages and provide further
+documentation not available in the code.
+
+
+
+**/
+

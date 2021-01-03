@@ -1,0 +1,108 @@
+.TH "IniFormat" 3 "Mon Oct 26 2020" "libconfini" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IniFormat \- 24-bit bitfield representing the format of an INI file (INI dialect)  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <confini\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "unsigned char \fBdelimiter_symbol\fP: 7"
+.br
+.ti -1c
+.RI "unsigned char \fBcase_sensitive\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBsemicolon_marker\fP: 2"
+.br
+.ti -1c
+.RI "unsigned char \fBhash_marker\fP: 2"
+.br
+.ti -1c
+.RI "unsigned char \fBsection_paths\fP: 2"
+.br
+.ti -1c
+.RI "unsigned char \fBmultiline_nodes\fP: 2"
+.br
+.ti -1c
+.RI "unsigned char \fBno_single_quotes\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBno_double_quotes\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBno_spaces_in_names\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBimplicit_is_not_empty\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBdo_not_collapse_values\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBpreserve_empty_quotes\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBdisabled_after_space\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBdisabled_can_be_implicit\fP: 1"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+24-bit bitfield representing the format of an INI file (INI dialect) 
+
+
+.PP
+\fBVersion\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+October 6th, 2018 (version 1\&.7\&.0 of the library) 
+.RE
+.PP
+
+.SH "Field Documentation"
+.PP 
+.SS "IniFormat::case_sensitive"
+If set to \fCtrue\fP, string comparisons will be always case-sensitive\&. 
+.SS "IniFormat::delimiter_symbol"
+The key-value delimiter character (ASCII only allowed); if set to \fC\\0\fP, any space is delimiter (\fC/(?:\\\\(?:\\n\\r?|\\r\\n?)|[\\t \\v\\f])+/\fP); if, within the format given, \fC\fBIniFormat::delimiter_symbol\fP\fP matches a metacharacter (\fC'\\\\'\fP, \fC'\\''\fP, \fC'\\"'\fP), its role as metacharacter will have higher priority than its role as delimiter symbol (i\&.e\&., the format will have no key-value delimiter); you may use the \fBIniDelimiters\fP \fCenum\fP for this\&. 
+.SS "IniFormat::disabled_after_space"
+If set to \fCtrue\fP, what follows \fC/[#;]\\s/\fP is allowed to be parsed as a disabled entry\&. 
+.SS "IniFormat::disabled_can_be_implicit"
+If set to \fCfalse\fP, comments that do not contain a key-value delimiter will never be parsed as disabled keys, but always as simple comments (even if the format supports implicit keys)\&. 
+.SS "IniFormat::do_not_collapse_values"
+If set to \fCtrue\fP, sequences of one or more spaces in values (\fC/\\s+/\fP) will be dispatched verbatim\&. 
+.SS "IniFormat::hash_marker"
+The role of the hash character (use \fCenum\fP \fBIniCommentMarker\fP for this)\&. 
+.SS "IniFormat::implicit_is_not_empty"
+If set to \fCtrue\fP, implicit keys (see \fBLibrary Functions Manual\fP) will be always dispatched using the values provided by the global variables \fBINI_GLOBAL_IMPLICIT_VALUE\fP and \fBINI_GLOBAL_IMPLICIT_V_LEN\fP for the fields \fBIniDispatch::value\fP and to \fBIniDispatch::v_len\fP respectively; if set to \fCfalse\fP, implicit keys will be considered to be empty keys\&. 
+.SS "IniFormat::multiline_nodes"
+Defines which class of entries are allowed to be multi-line (use \fCenum\fP \fBIniMultiline\fP for this)\&. 
+.SS "IniFormat::no_double_quotes"
+If set to \fCtrue\fP, the double-quote character (\fC"\fP) will be considered as a normal character\&. 
+.SS "IniFormat::no_single_quotes"
+If set to \fCtrue\fP, the single-quote character (\fC'\fP) will be considered as a normal character\&. 
+.SS "IniFormat::no_spaces_in_names"
+If set to \fCtrue\fP, key and section names containing spaces (even within quotes) will be dispatched as \fBINI_UNKNOWN\fP\&. Note that setting \fBIniFormat::delimiter_symbol\fP to \fBINI_ANY_SPACE\fP will not automatically set this option to \fCtrue\fP (spaces will still be allowed in section names)\&. 
+.SS "IniFormat::preserve_empty_quotes"
+If set to \fCtrue\fP, and if single/double quotes are metacharacters, ensures that, within values, empty strings enclosed between quotes (\fC''\fP or \fC''\fP) will not be collapsed together with the spaces that surround them\&. This option is useful for values containing space-delimited arrays, in order to preserve their empty members – as in, for instance: \fCcoordinates = '' ''\fP\&. Note that, in section and key names, empty strings enclosed between quotes are \fIalways\fP collapsed together with their surrounding spaces\&. 
+.SS "IniFormat::section_paths"
+Defines whether and how the format supports sections (use \fCenum\fP \fBIniSectionPaths\fP for this)\&. 
+.SS "IniFormat::semicolon_marker"
+The role of the semicolon character (use \fCenum\fP \fBIniCommentMarker\fP for this)\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libconfini from the source code\&.

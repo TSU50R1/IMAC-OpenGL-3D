@@ -91,7 +91,11 @@ Dans `~/assimp/assimp-5.0.1` faire
 
 
 **LIBCONFINI**
-
+Dans lib/confini:
+./configure --disable-doc  --disable-examples --includedir=$PWD/../../include --libdir=$PWD --docdir=$PWD/etc
+make
+make install
+OLD:
 Pour le parsing de .ini  
 Récupérer le zip ici : https://github.com/madmurphy/libconfini  
 Installer libtool pour pouvoir compiler : `sudo apt-get install libtool-bin`  

@@ -1,0 +1,65 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/test/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_adf1f/fast && /usr/bin/make  -f CMakeFiles/cmTC_adf1f.dir/build.make CMakeFiles/cmTC_adf1f.dir/build
+make[1] : on entre dans le répertoire « /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/test/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_adf1f.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD -o CMakeFiles/cmTC_adf1f.dir/src.c.o -c /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/test/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_adf1f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_adf1f.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD -rdynamic CMakeFiles/cmTC_adf1f.dir/src.c.o -o cmTC_adf1f 
+CMakeFiles/cmTC_adf1f.dir/src.c.o : Dans la fonction « main » :
+src.c:(.text+0x3e) : référence indéfinie vers « pthread_create »
+src.c:(.text+0x4a) : référence indéfinie vers « pthread_detach »
+src.c:(.text+0x56) : référence indéfinie vers « pthread_cancel »
+src.c:(.text+0x67) : référence indéfinie vers « pthread_join »
+src.c:(.text+0x7b) : référence indéfinie vers « pthread_atfork »
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_adf1f.dir/build.make:105: recipe for target 'cmTC_adf1f' failed
+make[1]: *** [cmTC_adf1f] Error 1
+make[1] : on quitte le répertoire « /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/test/CMakeFiles/CMakeTmp »
+Makefile:140: recipe for target 'cmTC_adf1f/fast' failed
+make: *** [cmTC_adf1f/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/test/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8ec72/fast && /usr/bin/make  -f CMakeFiles/cmTC_8ec72.dir/build.make CMakeFiles/cmTC_8ec72.dir/build
+make[1] : on entre dans le répertoire « /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/test/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_8ec72.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_8ec72.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8ec72
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ec72.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_8ec72.dir/CheckFunctionExists.c.o -o cmTC_8ec72  -lpthreads 
+/usr/bin/ld : ne peut trouver -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_8ec72.dir/build.make:105: recipe for target 'cmTC_8ec72' failed
+make[1]: *** [cmTC_8ec72] Error 1
+make[1] : on quitte le répertoire « /home/laurine/Documents/IMAC2/OpenGL/IMAC-OpenGL-3D/test/CMakeFiles/CMakeTmp »
+Makefile:140: recipe for target 'cmTC_8ec72/fast' failed
+make: *** [cmTC_8ec72/fast] Error 2
+
+
+

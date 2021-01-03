@@ -36,7 +36,7 @@ include_directories(
 
 #add_subdirectory(lib/glimac)
 set(ALL_LIBRARIES soil2  ${SDL_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} assimp glfw dl confini)
-link_directories(lib/SOIL2 /usr/local/lib ~/assimp/lib /usr/lib/x86_64-linux-gnu )
+link_directories(lib/SOIL2 lib/confini /usr/local/lib ~/assimp/lib /usr/lib/x86_64-linux-gnu )
 add_executable(${PROJECT_NAME} ${SRC_FILES} ${HEADER_FILES} ${SHADER_FILES})
 target_link_libraries(${PROJECT_NAME} ${ALL_LIBRARIES} )
 
