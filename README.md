@@ -64,6 +64,8 @@ Pour annuler `git merge --abort`
 
 **COMPILATION**
 
+`IMAC-OpenGL-3D$ mkdir cmake-build-debug`
+
 `IMAC-OpenGL-3D/cmake-build-debug$ cmake ..`
 
 `IMAC-OpenGL-3D/cmake-build-debug$ make`
@@ -91,7 +93,11 @@ Dans `~/assimp/assimp-5.0.1` faire
 
 
 **LIBCONFINI**
-
+Dans lib/confini:
+./configure --disable-doc  --disable-examples --includedir=$PWD/../../include --libdir=$PWD --docdir=$PWD/etc
+make
+make install
+OLD:
 Pour le parsing de .ini  
 Récupérer le zip ici : https://github.com/madmurphy/libconfini  
 Installer libtool pour pouvoir compiler : `sudo apt-get install libtool-bin`  
@@ -101,4 +107,7 @@ puis : `make`
 et enfin : `make install-strip` et si ça ne marche pas  `sudo make install-strip`
 
 
+**GLFW**
+`sudo apt-get update`      
+`sudo apt-get install libglfw3`
 

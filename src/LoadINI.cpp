@@ -30,26 +30,6 @@ int IniLoadMap::mapPath (const std::string path, const IniFormat format, const I
     return load_ini_path(path.c_str(), format, NULL, callback, &dictionary);
 }
 
-
-/*  Parse a string containing an INI file  */
-int IniLoadMap::mapINIString (const std::string ini_string, const IniFormat format, const IniDispHandler callback) {
-    this->dictionary.clear();
-    this->_format_ = format;
-    size_t len = ini_string.length();
-    char * tmp = new char[len + 1];
-    memcpy(tmp, ini_string.c_str(), len + 1);
-    int retval = strip_ini_cache(tmp, len, format, NULL, callback, &dictionary);
-    delete tmp;
-    return retval;
-}
-
-
-/*  Check if a key exists  */
-bool IniLoadMap::hasKey (const std::string key) {
-    return dictionary.count(key) ? true : false;
-}
-
-
 /*  Get the INI source string of a value  */
 std::string IniLoadMap::getSource (const std::string key) {
     if (!dictionary.count(key)) {
@@ -57,26 +37,6 @@ std::string IniLoadMap::getSource (const std::string key) {
         throw std::runtime_error("Key not present.");
     }
     return dictionary.at(key);
-}
-
-
-/*  Get a value as `bool`  */
-bool IniLoadMap::getBool (const std::string key, bool * const is_bool) {
-    unsigned int intbool = static_cast<unsigned int>(ini_get_bool_i(this->getSource(key).c_str(), 2, this->_format_));
-    if (is_bool) {
-        *is_bool = !(intbool & 2);
-    }
-    return static_cast<bool>(intbool & 1);
-}
-
-
-/*  Like `IniMap::getBool`, but defaults to `true`  */
-bool IniLoadMap::isntFalse (const std::string key, bool * const is_bool) {
-    unsigned int intbool = static_cast<unsigned int>(ini_get_bool_i(this->getSource(key).c_str(), 3, this->_format_));
-    if (is_bool) {
-        *is_bool = !(intbool & 2);
-    }
-    return static_cast<bool>(intbool & 1);
 }
 
 
@@ -91,42 +51,6 @@ std::string IniLoadMap::getString (const std::string key) {
     delete tmp;
     return myString;
 }
-
-
-/*  Get a value parsed as an array of C strings (`char **`)  */
-/*  Remember to `delete` the array returned after using it!  */
-char * const * IniLoadMap::getStringArray (
-        const std::string key,
-        size_t * const dest_arrlen,
-        const char delimiter
-) {
-
-    const std::string srcstr = this->getSource(key);
-    *dest_arrlen = ini_array_get_length(srcstr.c_str(), delimiter, this->_format_);
-
-    if (!*dest_arrlen) {
-
-        return NULL;
-
-    }
-
-    char ** const newarr = reinterpret_cast<char **>(
-            (void *) operator new(*dest_arrlen * sizeof(char *) + srcstr.length() + 1)
-    );
-    char * remnant = reinterpret_cast<char *>((char **) newarr + *dest_arrlen);
-    memcpy(remnant, srcstr.c_str(), srcstr.length() + 1);
-
-    for (size_t idx = 0; idx < *dest_arrlen; idx++) {
-
-        newarr[idx] = ini_array_release(&remnant, delimiter, this->_format_);
-        ini_string_parse(newarr[idx], this->_format_);
-
-    }
-
-    return (char * const *) newarr;
-
-}
-
 
 /*  Private `IniDispHandler`  */
 int IniLoadMap::_push_dispatch_ (IniDispatch * const disp, void * const v_dictionary) {

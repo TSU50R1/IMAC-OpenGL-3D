@@ -26,7 +26,7 @@ public:
     }
 
     // draws the model, and thus all its meshes
-    void Draw(Shader &shader);
+    void Draw(imacity::Shader &shader);
 
 private:
     // loads a model with supported ASSIMP extensions from file and stores the resulting meshes in the meshes vector.
