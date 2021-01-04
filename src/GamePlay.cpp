@@ -92,9 +92,10 @@ void GamePlay::verifications_zones(imacity::FreeflyCamera &camera){
 
 ////SCENE HANDLING----------------------------------------------------
 //scene rendering according to the scene to be displayed
-void GamePlay::drawScene(const glm::mat4 &projection, const glm::mat4 &view ){
+void GamePlay::drawScene(const glm::mat4 &projection, const glm::mat4 &view, const imacity::FreeflyCamera &camera){
     for (size_t i = 0; i<m_nb_scenes; i++){
         if (m_afficher_scene[i])
+            m_scenes[i]->enlight(projection, view, camera);
             m_scenes[i]->renderScene(projection, view);
     }
 

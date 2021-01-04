@@ -43,7 +43,7 @@ public:
     ~GamePlay();
     //scene handling
     void loadScenes ();
-    void drawScene(const glm::mat4 &projection, const glm::mat4 &view );
+    void drawScene(const glm::mat4 &projection, const glm::mat4 &view, const imacity::FreeflyCamera &camera);
     void changement_scene(const int numero_scene,imacity::FreeflyCamera &camera);
     void set_camera_new_scene(imacity::FreeflyCamera &camera,const int i);
     void reste_dans_scene(imacity::FreeflyCamera &camera);

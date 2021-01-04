@@ -2,6 +2,7 @@
 #include "myShader.hpp"
 #include "Model.hpp"
 #include "LoadINI.hpp"
+#include "FreeflyCamera.hpp"
 #include <string>
 #include <vector>
 
@@ -14,6 +15,7 @@ public:
     std::vector<imacity::Shader*> m_shaders;
     Model* m_cle;
     imacity::Shader* m_shader_cle;
+    imacity::Shader* m_shader_light;
     bool m_afficher_cle;
 
 public:
@@ -25,4 +27,6 @@ public:
     glm::mat4 rendering(const std::string model_to_render, const glm::mat4 &projection, const glm::mat4 &view);
 
     inline void set_afficher_cle(const bool afficher_cle){m_afficher_cle = afficher_cle;}
+
+    void enlight(const glm::mat4 &projection, const glm::mat4 &view ,const imacity::FreeflyCamera &camera);
 };

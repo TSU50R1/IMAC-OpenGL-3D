@@ -85,4 +85,5 @@ namespace imacity {
         // ------------------------------------------------------------------------
         void checkCompileErrors(GLuint shader, std::string type);
     };
+
 }
