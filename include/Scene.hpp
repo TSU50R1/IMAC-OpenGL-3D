@@ -29,4 +29,5 @@ public:
     inline void set_afficher_cle(const bool afficher_cle){m_afficher_cle = afficher_cle;}
 
     void enlight(const glm::mat4 &projection, const glm::mat4 &view ,const imacity::FreeflyCamera &camera);
+    void delete_scene();
 };

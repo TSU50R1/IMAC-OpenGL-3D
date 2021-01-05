@@ -189,3 +189,12 @@ void GamePlay::fin_jeu(){
     std::cout << "Vous avez réussi à entrer dans le chateau !! " << std::endl;
     m_afficher_scene[0] = false;
 }
+
+
+void GamePlay::delete_scenes(){
+    for (int i = 0; i< m_nb_scenes; i++){
+        m_scenes[i]->delete_scene();
+        std::cout << "scene supprimé" << std::endl;
+        delete m_scenes[i];
+    }
+}
