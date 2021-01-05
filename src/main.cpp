@@ -108,6 +108,7 @@ int main(){
 
     // glfw: terminate, clearing all previously allocated GLFW resources.
     // ------------------------------------------------------------------
+    Game.delete_scenes();
     glfwTerminate();
     return 0;
 }

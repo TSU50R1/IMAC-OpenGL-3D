@@ -142,4 +142,12 @@ void Scene::enlight(const glm::mat4 &projection, const glm::mat4 &view ,const im
         m_shader_light->setMat4("view", view);
 }
 
-
+void Scene::delete_scene(){
+    for (size_t i = 0; i<m_nbModels; i++ ){
+        std::cout << "model supprimé" << std::endl;
+        delete m_models[i];
+    }
+    for (size_t i = 0; i <m_nbShaders; i++){
+        delete m_shaders[i];
+    }
+}

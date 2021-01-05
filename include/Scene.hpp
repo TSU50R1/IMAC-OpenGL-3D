@@ -25,6 +25,7 @@ public:
     void loadScene();
     void renderScene(const glm::mat4 &projection, const glm::mat4 &view);
     glm::mat4 rendering(const std::string model_to_render, const glm::mat4 &projection, const glm::mat4 &view);
+    void delete_scene();
 
     inline void set_afficher_cle(const bool afficher_cle){m_afficher_cle = afficher_cle;}
 

@@ -56,6 +56,7 @@ public:
     void evemement_entrer_porte(imacity::FreeflyCamera &camera);
     //end if game
     void fin_jeu();
+    void delete_scenes();
 
 
     inline bool get_check_scene_limite(){return m_check_scene_limite;}

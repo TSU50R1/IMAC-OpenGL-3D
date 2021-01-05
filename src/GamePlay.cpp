@@ -60,10 +60,8 @@ void GamePlay::est_dans_scene(imacity::FreeflyCamera &camera, const int i){
     float pas_recul = 0.07;
     if (sqrt(pow(x_zone-camera.get_Position().x,2)+pow(z_zone-camera.get_Position().z,2))<=R){
         m_check_scene_limite =  true;
-        std::cout << "en dans de la zone" << std::endl;
     }else{
         m_check_scene_limite = false;
-        std::cout << "en dehors de la zone" << std::endl;
         //si on arrive sur la limite du deplacement, il faut reculer la camera dans la direction formé par le vecteur entre
         //la position courante et le centre de la scene
         camera.set_Position(camera.get_Position().x-pas_recul*(camera.get_Position().x-x_zone),0.0,camera.get_Position().z- pas_recul*(camera.get_Position().z-z_zone));
@@ -95,10 +93,9 @@ void GamePlay::verifications_zones(imacity::FreeflyCamera &camera){
 void GamePlay::drawScene(const glm::mat4 &projection, const glm::mat4 &view, const imacity::FreeflyCamera &camera){
     for (size_t i = 0; i<m_nb_scenes; i++){
         if (m_afficher_scene[i])
-            //m_scenes[i]->enlight(projection, view, camera);
+           // m_scenes[i]->enlight(projection, view, camera);
             m_scenes[i]->renderScene(projection, view);
     }
-
 }
 //scene loading
 void GamePlay::loadScenes (){
@@ -177,7 +174,7 @@ void GamePlay::evemement_entrer_porte(imacity::FreeflyCamera &camera){
                             changement_scene(i,camera);
                     }
                // }else{
-                          std::cout << "Vous n'avez pas la clé, il faut la chercher !"<< std::endl;
+                     //     std::cout << "Vous n'avez pas la clé, il faut la chercher !"<< std::endl;
                // }
             }
         }
@@ -188,4 +185,13 @@ void GamePlay::evemement_entrer_porte(imacity::FreeflyCamera &camera){
 void GamePlay::fin_jeu(){
     std::cout << "Vous avez réussi à entrer dans le chateau !! " << std::endl;
     m_afficher_scene[0] = false;
+}
+
+
+void GamePlay::delete_scenes(){
+    for (int i = 0; i< m_nb_scenes; i++){
+        m_scenes[i]->delete_scene();
+        std::cout << "scene supprimé" << std::endl;
+        delete m_scenes[i];
+    }
 }
