@@ -150,17 +150,15 @@ Tf 1.00 1.00 1.00
 Ni 1.00
 newmtl lambert29SG
 illum 4
-Kd 0.00 0.00 0.00
+Kd 0.36 0.08 0.08
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd lit.png
 Ni 1.00
 newmtl lambert30SG
 illum 4
-Kd 0.00 0.00 0.00
+Kd 1.00 1.00 1.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd lit_blanc.png
 Ni 1.00
 newmtl lambert33SG
 illum 4
@@ -203,10 +201,9 @@ Ni 1.00
 Ks 0.50 0.50 0.50
 newmtl pasted__blinn4SG
 illum 4
-Kd 0.00 0.00 0.00
+Kd 0.44 0.40 1.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd fenetre.png
 Ni 1.00
 Ks 0.50 0.50 0.50
 newmtl pasted__blinn4SG1
@@ -321,10 +318,9 @@ map_Kd Bois.jpg
 Ni 1.00
 newmtl pasted__lambert26SG
 illum 4
-Kd 0.00 0.00 0.00
+Kd 0.00 0.00 0.42
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd livre_bleu.png
 Ni 1.00
 newmtl pasted__lambert27SG
 illum 4
@@ -348,10 +344,9 @@ Ni 1.00
 Ks 0.50 0.50 0.50
 newmtl pasted__pasted__blinn24SG
 illum 4
-Kd 0.00 0.00 0.00
+Kd 0.30 0.00 0.00
 Ka 0.26 0.26 0.26
 Tf 1.00 1.00 1.00
-map_Kd livre_rouge.png
 Ni 1.00
 Ks 0.68 0.68 0.68
 newmtl pasted__pasted__typeBlinn2SG
